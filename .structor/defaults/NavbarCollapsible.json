@@ -1,0 +1,263 @@
+[
+  {
+    "variantName": "bookkeper",
+    "type": "NavbarCollapsible",
+    "props": {
+      "inverse": true,
+      "fixedTop": false,
+      "fluid": true,
+      "staticTop": true,
+      "branding": {
+        "name": "Bookkeeper",
+        "href": "#"
+      },
+      "data-umyid": "20",
+      "className": ""
+    },
+    "children": [
+      {
+        "variantName": "left",
+        "type": "Nav",
+        "props": {
+          "pullRight": false,
+          "data-umyid": "21"
+        },
+        "children": [
+          {
+            "type": "NavItemLink",
+            "props": {
+              "data-umyid": "22",
+              "to": "/book"
+            },
+            "children": [
+              {
+                "variantName": "Unsaved variant",
+                "type": "span",
+                "props": {
+                  "data-umyid": "23",
+                  "className": ""
+                },
+                "text": "Book"
+              }
+            ]
+          },
+          {
+            "variantName": "default",
+            "type": "NavDropdown",
+            "props": {
+              "title": "Lists",
+              "eventKey": 3,
+              "data-umyid": "24"
+            },
+            "children": [
+              {
+                "props": {
+                  "eventKey": "1",
+                  "data-umyid": "25",
+                  "to": "/customers"
+                },
+                "children": [
+                  {
+                    "variantName": "Unsaved variant",
+                    "type": "span",
+                    "props": {
+                      "data-umyid": "26"
+                    },
+                    "text": "Customers"
+                  }
+                ],
+                "type": "MenuItemLink"
+              },
+              {
+                "props": {
+                  "eventKey": "2",
+                  "data-umyid": "30",
+                  "to": "/goods"
+                },
+                "children": [
+                  {
+                    "variantName": "Unsaved variant",
+                    "type": "span",
+                    "props": {
+                      "data-umyid": "31"
+                    },
+                    "text": "Goods"
+                  }
+                ],
+                "type": "MenuItemLink"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "variantName": "bookkeeper-double",
+    "type": "NavbarCollapsible",
+    "props": {
+      "inverse": true,
+      "fixedTop": false,
+      "fluid": true,
+      "staticTop": true,
+      "branding": {
+        "name": "Bookkeeper",
+        "href": "#"
+      },
+      "data-umyid": "20",
+      "className": ""
+    },
+    "children": [
+      {
+        "variantName": "left",
+        "type": "Nav",
+        "props": {
+          "pullRight": false,
+          "data-umyid": "21"
+        },
+        "children": [
+          {
+            "type": "NavItemLink",
+            "props": {
+              "data-umyid": "22",
+              "to": "/book"
+            },
+            "children": [
+              {
+                "variantName": "Unsaved variant",
+                "type": "span",
+                "props": {
+                  "data-umyid": "23",
+                  "className": ""
+                },
+                "text": "Book"
+              }
+            ]
+          },
+          {
+            "variantName": "default",
+            "type": "NavDropdown",
+            "props": {
+              "title": "Lists",
+              "eventKey": 3,
+              "data-umyid": "24"
+            },
+            "children": [
+              {
+                "props": {
+                  "eventKey": "1",
+                  "data-umyid": "25",
+                  "to": "/customers"
+                },
+                "children": [
+                  {
+                    "variantName": "Unsaved variant",
+                    "type": "span",
+                    "props": {
+                      "data-umyid": "26"
+                    },
+                    "text": "Customers"
+                  }
+                ],
+                "type": "MenuItemLink"
+              },
+              {
+                "props": {
+                  "eventKey": "2",
+                  "data-umyid": "30",
+                  "to": "/goods"
+                },
+                "children": [
+                  {
+                    "variantName": "Unsaved variant",
+                    "type": "span",
+                    "props": {
+                      "data-umyid": "31"
+                    },
+                    "text": "Goods"
+                  }
+                ],
+                "type": "MenuItemLink"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "variantName": "left",
+        "type": "Nav",
+        "props": {
+          "pullRight": true,
+          "data-umyid": "84"
+        },
+        "children": [
+          {
+            "type": "NavItemLink",
+            "props": {
+              "data-umyid": "85",
+              "to": "/book"
+            },
+            "children": [
+              {
+                "variantName": "Unsaved variant",
+                "type": "span",
+                "props": {
+                  "data-umyid": "86",
+                  "className": ""
+                },
+                "text": "Book"
+              }
+            ]
+          },
+          {
+            "variantName": "default",
+            "type": "NavDropdown",
+            "props": {
+              "title": "Lists",
+              "eventKey": 3,
+              "data-umyid": "87"
+            },
+            "children": [
+              {
+                "props": {
+                  "eventKey": "1",
+                  "data-umyid": "88",
+                  "to": "/customers"
+                },
+                "children": [
+                  {
+                    "variantName": "Unsaved variant",
+                    "type": "span",
+                    "props": {
+                      "data-umyid": "89"
+                    },
+                    "text": "Customers"
+                  }
+                ],
+                "type": "MenuItemLink"
+              },
+              {
+                "props": {
+                  "eventKey": "2",
+                  "data-umyid": "90",
+                  "to": "/goods"
+                },
+                "children": [
+                  {
+                    "variantName": "Unsaved variant",
+                    "type": "span",
+                    "props": {
+                      "data-umyid": "91"
+                    },
+                    "text": "Goods"
+                  }
+                ],
+                "type": "MenuItemLink"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

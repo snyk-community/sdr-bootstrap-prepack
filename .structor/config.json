@@ -1,0 +1,7 @@
+{
+  "projectName": "sdr-bootstrap-prepack",
+  "projectId": 175,
+  "proxyURL": "http://localhost:8080",
+  "exportDirPath": "client/src/routes",
+  "restApiBase": "/api"
+}

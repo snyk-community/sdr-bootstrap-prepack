@@ -1,0 +1,813 @@
+{
+  "pages": [
+    {
+      "pageName": "HomePage",
+      "pagePath": "/home",
+      "children": [
+        {
+          "type": "AutoSignIn",
+          "props": {
+            "data-umyid": "2"
+          }
+        },
+        {
+          "variantName": "bookkeper",
+          "type": "NavbarCollapsible",
+          "props": {
+            "inverse": true,
+            "fixedTop": false,
+            "fluid": true,
+            "staticTop": true,
+            "branding": {
+              "name": "Brand",
+              "href": "/"
+            },
+            "className": "",
+            "data-umyid": "3"
+          },
+          "children": [
+            {
+              "variantName": "left",
+              "type": "Nav",
+              "props": {
+                "pullRight": false,
+                "data-umyid": "4"
+              },
+              "children": [
+                {
+                  "type": "NavItemLink",
+                  "props": {
+                    "to": "/data-grid",
+                    "className": "",
+                    "data-umyid": "5"
+                  },
+                  "children": [
+                    {
+                      "variantName": "Unsaved variant",
+                      "type": "span",
+                      "props": {
+                        "className": "",
+                        "data-umyid": "6"
+                      },
+                      "text": "Data Grid"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "variantName": "left",
+              "type": "Nav",
+              "props": {
+                "pullRight": true,
+                "data-umyid": "7"
+              },
+              "children": [
+                {
+                  "type": "UserProfileNavItemLink",
+                  "props": {
+                    "routeUserProfile": "/user-profile",
+                    "data-umyid": "8"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "props": {
+            "style": {
+              "padding": "1em",
+              "textAlign": "center"
+            },
+            "data-umyid": "9"
+          },
+          "children": [
+            {
+              "type": "span",
+              "text": "Home Page",
+              "props": {
+                "data-umyid": "10"
+              }
+            }
+          ]
+        },
+        {
+          "variantName": "2 colums",
+          "type": "Grid",
+          "props": {
+            "fluid": true,
+            "data-umyid": "11"
+          },
+          "children": [
+            {
+              "type": "Row",
+              "children": [
+                {
+                  "type": "Col",
+                  "props": {
+                    "xs": 3,
+                    "md": 3,
+                    "sm": 3,
+                    "lg": 3,
+                    "data-umyid": "13"
+                  },
+                  "children": []
+                },
+                {
+                  "type": "Col",
+                  "props": {
+                    "xs": 6,
+                    "md": 6,
+                    "sm": 6,
+                    "lg": 6,
+                    "data-umyid": "14"
+                  },
+                  "children": [
+                    {
+                      "type": "Panel",
+                      "props": {
+                        "data-umyid": "109",
+                        "bsStyle": "warning",
+                        "header": "Please note"
+                      },
+                      "children": [
+                        {
+                          "type": "p",
+                          "children": [
+                            {
+                              "type": "span",
+                              "text": "Before you start composing UI, please start Spring Data REST service in order to allow the generators to access to the metadata of the service.",
+                              "props": {
+                                "data-umyid": "111"
+                              },
+                              "componentName": null
+                            }
+                          ],
+                          "props": {
+                            "data-umyid": "110"
+                          }
+                        },
+                        {
+                          "type": "p",
+                          "children": [
+                            {
+                              "type": "span",
+                              "text": "Current project has already implemented an authentication mechanism for Spring Data REST service and it works for data aware components which you can generate here as well. Also there are already implemented components which can provide authentication. So, to prevent denying access to data for data aware components please make authentication in live preview mode and use default user account - login: \"user\", password: \"password\"",
+                              "props": {
+                                "data-umyid": "113"
+                              },
+                              "componentName": null
+                            }
+                          ],
+                          "props": {
+                            "data-umyid": "112"
+                          }
+                        },
+                        {
+                          "variantName": "Unsaved variant",
+                          "type": "p",
+                          "props": {
+                            "data-umyid": "114"
+                          },
+                          "children": [
+                            {
+                              "type": "span",
+                              "text": "\"Project info panel\" (ProjectInfoPanel) component will indicate if the service is running or user account is authenticated successfully.",
+                              "props": {
+                                "data-umyid": "115"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ProjectInfoPanel",
+                      "props": {
+                        "data-umyid": "15"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "Col",
+                  "props": {
+                    "xs": 3,
+                    "md": 3,
+                    "sm": 3,
+                    "lg": 3,
+                    "data-umyid": "16"
+                  },
+                  "children": []
+                }
+              ],
+              "props": {
+                "data-umyid": "12"
+              }
+            }
+          ]
+        }
+      ],
+      "props": {
+        "data-umyid": "1"
+      },
+      "pageTitle": "UnnamedPage2",
+      "pageProps": [],
+      "pageScript": ""
+    },
+    {
+      "pageName": "UserProfilePage",
+      "pagePath": "/user-profile",
+      "children": [
+        {
+          "variantName": "bookkeper",
+          "type": "NavbarCollapsible",
+          "props": {
+            "inverse": true,
+            "fixedTop": false,
+            "fluid": true,
+            "staticTop": true,
+            "branding": {
+              "name": "Brand",
+              "href": "/"
+            },
+            "data-umyid": "18"
+          },
+          "children": [
+            {
+              "variantName": "left",
+              "type": "Nav",
+              "props": {
+                "pullRight": false,
+                "data-umyid": "19"
+              },
+              "children": [
+                {
+                  "type": "NavItemLink",
+                  "props": {
+                    "to": "/home",
+                    "className": "",
+                    "data-umyid": "20"
+                  },
+                  "children": [
+                    {
+                      "variantName": "Unsaved variant",
+                      "type": "span",
+                      "props": {
+                        "className": "",
+                        "data-umyid": "21"
+                      },
+                      "text": "Home"
+                    }
+                  ]
+                },
+                {
+                  "type": "NavItemLink",
+                  "props": {
+                    "to": "/data-grid",
+                    "data-umyid": "22"
+                  },
+                  "children": [
+                    {
+                      "variantName": "Unsaved variant",
+                      "type": "span",
+                      "props": {
+                        "className": "",
+                        "data-umyid": "23"
+                      },
+                      "text": "Datagrid"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "variantName": "left",
+              "type": "Nav",
+              "props": {
+                "pullRight": true,
+                "data-umyid": "24"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "AutoSignIn",
+          "props": {
+            "data-umyid": "25"
+          }
+        },
+        {
+          "variantName": "2 colums",
+          "type": "Grid",
+          "props": {
+            "fluid": true,
+            "style": {
+              "marginTop": "50px"
+            },
+            "data-umyid": "26"
+          },
+          "children": [
+            {
+              "type": "Row",
+              "children": [
+                {
+                  "type": "Col",
+                  "props": {
+                    "xs": 12,
+                    "md": 4,
+                    "sm": 8,
+                    "lg": 4,
+                    "mdOffset": 4,
+                    "lgOffset": 4,
+                    "smOffset": 2,
+                    "data-umyid": "28"
+                  },
+                  "children": [
+                    {
+                      "type": "SignInOutForm",
+                      "props": {
+                        "routeAfterSignIn": "/home",
+                        "routeAfterSignOut": "/home",
+                        "data-umyid": "29"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "props": {
+                "data-umyid": "27"
+              }
+            }
+          ]
+        }
+      ],
+      "props": {
+        "data-umyid": "17"
+      },
+      "pageTitle": "UnnamedPage2",
+      "pageProps": [],
+      "pageScript": ""
+    },
+    {
+      "pageName": "DataGridPage",
+      "pagePath": "/data-grid",
+      "children": [
+        {
+          "type": "AutoSignIn",
+          "props": {
+            "className": "",
+            "data-umyid": "31"
+          }
+        },
+        {
+          "variantName": "bookkeper",
+          "type": "NavbarCollapsible",
+          "props": {
+            "inverse": true,
+            "fixedTop": false,
+            "fluid": true,
+            "staticTop": true,
+            "branding": {
+              "name": "Brand",
+              "href": "/"
+            },
+            "className": "",
+            "data-umyid": "32"
+          },
+          "children": [
+            {
+              "variantName": "left",
+              "type": "Nav",
+              "props": {
+                "pullRight": false,
+                "data-umyid": "33"
+              },
+              "children": [
+                {
+                  "type": "NavItemLink",
+                  "props": {
+                    "to": "/home",
+                    "data-umyid": "34"
+                  },
+                  "children": [
+                    {
+                      "variantName": "Unsaved variant",
+                      "type": "span",
+                      "props": {
+                        "className": "",
+                        "data-umyid": "35"
+                      },
+                      "text": "Home"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "variantName": "left",
+              "type": "Nav",
+              "props": {
+                "pullRight": true,
+                "data-umyid": "36"
+              },
+              "children": [
+                {
+                  "type": "UserProfileNavItemLink",
+                  "props": {
+                    "routeUserProfile": "/user-profile",
+                    "data-umyid": "37"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "variantName": "Unsaved variant",
+          "type": "h3",
+          "props": {
+            "className": "text-center",
+            "data-umyid": "38"
+          },
+          "children": [
+            {
+              "type": "span",
+              "text": "Spring Data REST",
+              "props": {
+                "data-umyid": "39"
+              }
+            }
+          ]
+        },
+        {
+          "variantName": "mini mesh",
+          "type": "Grid",
+          "props": {
+            "fluid": true,
+            "style": {
+              "marginTop": "3em"
+            },
+            "className": "",
+            "data-umyid": "40"
+          },
+          "children": [
+            {
+              "type": "Row",
+              "children": [
+                {
+                  "type": "Col",
+                  "props": {
+                    "xs": 3,
+                    "md": 3,
+                    "sm": 3,
+                    "lg": 3,
+                    "data-umyid": "42"
+                  },
+                  "children": [
+                    {
+                      "variantName": "Unsaved variant",
+                      "type": "h4",
+                      "props": {
+                        "data-umyid": "43"
+                      },
+                      "children": [
+                        {
+                          "type": "span",
+                          "text": "Departments",
+                          "props": {
+                            "data-umyid": "44"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "variantName": "Unsaved variant",
+                      "type": "hr",
+                      "props": {
+                        "data-umyid": "45"
+                      }
+                    },
+                    {
+                      "type": "Panel",
+                      "props": {
+                        "data-umyid": "70"
+                      },
+                      "children": [
+                        {
+                          "type": "p",
+                          "children": [
+                            {
+                              "type": "span",
+                              "text": "Install generator: SpringDataRest.Lists.Entity.Toggle",
+                              "props": {
+                                "data-umyid": "72"
+                              },
+                              "componentName": null
+                            }
+                          ],
+                          "props": {
+                            "data-umyid": "71",
+                            "className": ""
+                          }
+                        },
+                        {
+                          "type": "p",
+                          "children": [
+                            {
+                              "type": "span",
+                              "text": "Select this Panel component and choose from dropdown menu \"Generate source code\"",
+                              "props": {
+                                "data-umyid": "86"
+                              },
+                              "componentName": null
+                            }
+                          ],
+                          "props": {
+                            "data-umyid": "85",
+                            "className": ""
+                          }
+                        },
+                        {
+                          "type": "p",
+                          "children": [
+                            {
+                              "type": "span",
+                              "text": "Use installed generator to create component",
+                              "props": {
+                                "data-umyid": "94"
+                              },
+                              "componentName": null
+                            }
+                          ],
+                          "props": {
+                            "data-umyid": "93"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Col",
+                  "props": {
+                    "xs": 6,
+                    "md": 6,
+                    "sm": 6,
+                    "lg": 6,
+                    "data-umyid": "47"
+                  },
+                  "children": [
+                    {
+                      "variantName": "Unsaved variant",
+                      "type": "h4",
+                      "props": {
+                        "data-umyid": "48"
+                      },
+                      "children": [
+                        {
+                          "type": "span",
+                          "text": "Persons",
+                          "props": {
+                            "data-umyid": "49"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "variantName": "Unsaved variant",
+                      "type": "hr",
+                      "props": {
+                        "data-umyid": "50"
+                      }
+                    },
+                    {
+                      "type": "Panel",
+                      "props": {
+                        "data-umyid": "73"
+                      },
+                      "children": [
+                        {
+                          "type": "p",
+                          "children": [
+                            {
+                              "type": "span",
+                              "text": "Install generator: SpringDataRest.DataGrids.Entity.SortPageToggle",
+                              "props": {
+                                "data-umyid": "88"
+                              },
+                              "componentName": null
+                            }
+                          ],
+                          "props": {
+                            "data-umyid": "87"
+                          }
+                        },
+                        {
+                          "type": "p",
+                          "children": [
+                            {
+                              "type": "span",
+                              "text": "Select this Panel component and choose from dropdown menu \"Generate source code\"",
+                              "props": {
+                                "data-umyid": "90"
+                              },
+                              "componentName": null
+                            }
+                          ],
+                          "props": {
+                            "data-umyid": "89"
+                          }
+                        },
+                        {
+                          "type": "p",
+                          "children": [
+                            {
+                              "type": "span",
+                              "text": "Use installed generator to create component",
+                              "props": {
+                                "data-umyid": "92"
+                              },
+                              "componentName": null
+                            }
+                          ],
+                          "props": {
+                            "data-umyid": "91",
+                            "className": ""
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Panel",
+                      "props": {
+                        "data-umyid": "95",
+                        "className": ""
+                      },
+                      "children": [
+                        {
+                          "type": "p",
+                          "children": [
+                            {
+                              "type": "span",
+                              "text": "Install generator: SpringDataRest.Pagination.AnyCollection.Simple",
+                              "props": {
+                                "data-umyid": "97"
+                              },
+                              "componentName": null
+                            }
+                          ],
+                          "props": {
+                            "data-umyid": "96"
+                          }
+                        },
+                        {
+                          "type": "p",
+                          "children": [
+                            {
+                              "type": "span",
+                              "text": "Select this Panel component and choose from dropdown menu \"Generate source code\"",
+                              "props": {
+                                "data-umyid": "99"
+                              },
+                              "componentName": null
+                            }
+                          ],
+                          "props": {
+                            "data-umyid": "98"
+                          }
+                        },
+                        {
+                          "type": "p",
+                          "children": [
+                            {
+                              "type": "span",
+                              "text": "Use installed generator to create component",
+                              "props": {
+                                "data-umyid": "101"
+                              },
+                              "componentName": null
+                            }
+                          ],
+                          "props": {
+                            "data-umyid": "100",
+                            "className": ""
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "Col",
+                  "props": {
+                    "xs": 3,
+                    "md": 3,
+                    "sm": 3,
+                    "lg": 3,
+                    "data-umyid": "53"
+                  },
+                  "children": [
+                    {
+                      "variantName": "Unsaved variant",
+                      "type": "h4",
+                      "props": {
+                        "data-umyid": "54"
+                      },
+                      "children": [
+                        {
+                          "type": "span",
+                          "text": "Edit person",
+                          "props": {
+                            "data-umyid": "55"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "variantName": "Unsaved variant",
+                      "type": "hr",
+                      "props": {
+                        "data-umyid": "56"
+                      }
+                    },
+                    {
+                      "type": "Panel",
+                      "props": {
+                        "data-umyid": "102"
+                      },
+                      "children": [
+                        {
+                          "type": "p",
+                          "children": [
+                            {
+                              "type": "span",
+                              "text": "Install generator: SpringDataRest.Forms.AnyCollection.AddEdit.Vertical",
+                              "props": {
+                                "data-umyid": "104"
+                              },
+                              "componentName": null
+                            }
+                          ],
+                          "props": {
+                            "data-umyid": "103"
+                          }
+                        },
+                        {
+                          "type": "p",
+                          "children": [
+                            {
+                              "type": "span",
+                              "text": "Select this Panel component and choose from dropdown menu \"Generate source code\"",
+                              "props": {
+                                "data-umyid": "106"
+                              },
+                              "componentName": null
+                            }
+                          ],
+                          "props": {
+                            "data-umyid": "105"
+                          }
+                        },
+                        {
+                          "type": "p",
+                          "children": [
+                            {
+                              "type": "span",
+                              "text": "Use installed generator to create component",
+                              "props": {
+                                "data-umyid": "108"
+                              },
+                              "componentName": null
+                            }
+                          ],
+                          "props": {
+                            "data-umyid": "107",
+                            "className": ""
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "props": {
+                "data-umyid": "41"
+              }
+            }
+          ]
+        }
+      ],
+      "props": {
+        "data-umyid": "30"
+      },
+      "pageTitle": "UnnamedPage2",
+      "pageProps": [],
+      "pageScript": ""
+    }
+  ]
+}

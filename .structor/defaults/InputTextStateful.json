@@ -1,0 +1,16 @@
+[
+  {
+    "variantName": "default",
+    "type": "InputStateful",
+    "props": {
+      "type": "text",
+      "hasFeedback": true,
+      "placeholder": "Enter value",
+      "label": "Label for input",
+      "help": "Help for input",
+      "value": "default initial value",
+      "data-umyid": "93"
+    },
+    "children": []
+  }
+]

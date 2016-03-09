@@ -1,0 +1,35 @@
+{
+  "name": "ReduxContainer",
+  "description": "Redux container, includes all children",
+  "component": {
+    "destDirPath": "client/src/containers/{groupName}",
+    "fileExtension": "jsx",
+    "script": "component.js"
+  },
+  "modules":[
+    {
+      "id": "initialState",
+      "destDirPath": "client/src/store",
+      "name": "initialState.js",
+      "script": "initialState.js"
+    },
+    {
+      "id": "actions",
+      "destDirPath": "client/src/actions/{groupName}",
+      "name": "{componentName}Actions.js",
+      "script": "actions.js"
+    },
+    {
+      "id": "actionsIndex",
+      "destDirPath": "client/src/actions/",
+      "name": "index.js",
+      "script": "actionsIndex.js"
+    },
+    {
+      "id": "reducersIndex",
+      "destDirPath": "client/src/reducers/",
+      "name": "index.js",
+      "script": "reducersIndex.js"
+    }
+  ]
+}

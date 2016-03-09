@@ -1,0 +1,68 @@
+spring:
+  profiles:
+    active: development
+  application:
+    name: data-service
+  data:
+    rest:
+      basePath: /api
+  jackson:
+    serialization:
+      INDENT_OUTPUT: false
+  jpa:
+    properties:
+      hibernate:
+        hbm2dll:
+          auto: create-drop
+    hibernate:
+      ddl-auto: create-drop
+
+logging:
+  file: catalina.log
+  path: ./logs
+  level:
+    ROOT: INFO
+    com.changeme: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.springframework.web: DEBUG
+
+server:
+  port: 8080
+
+---
+spring:
+  profiles: development
+
+changeme:
+  token:
+    secret: DODODODO!!!
+    expiration: 604800
+
+---
+spring:
+  profiles: production
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+logging:
+  level:
+    ROOT: INFO
+    com.changeme: ERROR
+    org.hibernate.SQL: ERROR
+    org.springframework.web: ERROR
+
+changeme:
+  token:
+    secret: CHANGE_THIS
+    expiration: 604800
+
+#---
+#spring:
+#  profiles: production
+#  jpa:
+#    database: mysql
+#    hibernate:
+#      ddl-auto: update
+#  datasource:
+#    driverClassName: com.mysql.jdbc.Driver

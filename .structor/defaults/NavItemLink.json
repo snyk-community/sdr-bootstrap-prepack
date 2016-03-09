@@ -1,0 +1,19 @@
+[
+  {
+    "variantName": "default",
+    "type": "NavItemLink",
+    "props": {
+      "data-umyid": "153"
+    },
+    "children": [
+      {
+        "variantName": "Unsaved variant",
+        "type": "span",
+        "props": {
+          "data-umyid": "154"
+        },
+        "text": "Link"
+      }
+    ]
+  }
+]
