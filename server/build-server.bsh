@@ -36,7 +36,6 @@ getpid
 if [ -n "$pid" ]; then
     $LAUNCHER stop
 fi
-$MVN_CMD --version
 $MVN_CMD -f pom.xml clean package
 if [ -n "$pid" ]; then
     $LAUNCHER start

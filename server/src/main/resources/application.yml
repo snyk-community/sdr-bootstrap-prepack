@@ -19,7 +19,6 @@ spring:
 
 logging:
   file: catalina.log
-  path: ./logs
   level:
     ROOT: INFO
     com.changeme: DEBUG
@@ -57,12 +56,3 @@ changeme:
     secret: CHANGE_THIS
     expiration: 604800
 
-#---
-#spring:
-#  profiles: production
-#  jpa:
-#    database: mysql
-#    hibernate:
-#      ddl-auto: update
-#  datasource:
-#    driverClassName: com.mysql.jdbc.Driver
