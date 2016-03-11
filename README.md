@@ -4,21 +4,25 @@ This repo is a [Structor](https://github.com/ipselon/structor) starter project f
 
 ### What can be built with this project?
 
-You can build very easily a Web application for database CRUD operations with REST interface, authentication and professionaly looking Web UI with React Bootstrap components. 
+Choosing this project as a starter project you can easily build a Web application for database CRUD operations with REST interface, authentication, and dynamic and good looking Web UI. 
 
-Here you will get all spectre of the components for sophisticated Web UI:
+Here you will find all spectre of the components for sophisticated Web UI:
   * Data Grid components with sorting, paging, editing and deleting capabilities,
-  * List components for for collections,
-  * Form components for adding, editing records in collections of database entities,
-  * Form components for filtering data in Data Grids,
-  * Pagination components for navigation though pages in Data Grids,
+  * List components for collections,
+  * Form components for adding, editing records in collections,
+  * Form components for filtering data in collections,
+  * Pagination components for the navigation though pages in Data Grids,
   * and others.
 
-In contrast to majority of the database Web interfaces for CRUD, UI components can display linked entities collections, interact with each other, can search data, has different types of input elements including dropdowns, date calendars and others.
+In contrast to majority of the Web apps for database CRUD operations, UI components of the project can display linked entities collections, interact with each other, can search data, has different types of input elements including dropdowns, date calendars and others.
+
+All tools and libraries of this project are neatly configured and works perfect with each other, also you will find here a very simple building process of the whole application.
+
+It's worth a mention that all components are created and manipulated by a visual builder, which gives an instant feedback about how components look and feel.
 
 ### What is inside?
 
-##### Server
+##### Server part
 
 * Spring Boot
 * Spring Data
@@ -26,11 +30,12 @@ In contrast to majority of the database Web interfaces for CRUD, UI components c
 * Spring MVC
 * Spring Security
 
-##### Client
+##### Client part
 
 * React
 * React Router
 * React Bootrap
+* React Widgets
 * Redux
 * and other JS libs
 
