@@ -6,7 +6,7 @@ This repo is a [Structor](https://github.com/ipselon/structor) starter project f
 
 Choosing this project as a starter project you can easily build a Web application for database CRUD operations with REST interface, authentication, and dynamic and good looking Web UI. 
 
-Here you will find all spectre of the components for sophisticated Web UI:
+Here you will find a wide range (which is getting wider day by day) of the components for sophisticated Web UI:
   * Data Grid components with sorting, paging, editing and deleting capabilities,
   * List components for collections,
   * Form components for adding, editing records in collections,
