@@ -45,7 +45,7 @@ All tools and libraries of this project are neatly configured and works perfect 
 
 ### Prerequisites
 
-* <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" trget="_blank">JDK 8</a>
+* <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">JDK 8</a>
 * <a href="https://nodejs.org/en/" target="_blank">NodeJS 4 or 5</a>
 * <a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank">npm 3</a>
 * <a href="https://www.npmjs.com/package/structor" target="_blank">Structor 0.2.9</a>
@@ -64,7 +64,7 @@ There are 3 types of components in Stuctor project:
 2. Build-in source code generators, which generate the source code from the composition of components on the page. They also can be found in proejct source code.
 3. Online source code generators, which generate the source code of the advanced components, such as data grids or forms for RESTful interface. They can be installed into project from [Structor Market](https://helmetrex.com) and behave as they are build-in generators. The only difference is that these generators work if you have an account on Structor Market.
 
- 
+
 
 
 ### How it works
