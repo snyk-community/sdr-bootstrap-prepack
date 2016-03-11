@@ -61,9 +61,49 @@ It is needed to explain that this project is designed to work with Structor, wic
 There are 3 types of components in Stuctor project:
 
 1. Pre-created components, which have already written source code and can be found in the source code repository of the project
-2. Build-in source code generators, which generate the source code from the composition of components on the page. They also can be found in proejct source code.
-3. Online source code generators, which generate the source code of the advanced components, such as data grids or forms for RESTful interface. They can be installed into project from [Structor Market](https://helmetrex.com) and behave as they are build-in generators. The only difference is that these generators work if you have an account on Structor Market.
+2. Build-in source code generators, which generate the source code from the composition of components on the page. They also can be found in the proejct source code.
+3. Online source code generators, which generate the source code of the advanced components, such as data grids or forms for RESTful interface. They can be installed into project from [Structor Market](https://helmetrex.com) and behave as they are build-in generators. Look at [the list of available generators](http://probe.helmetrex.com/generators?projectId=175) for this project.
 
+#### Create an account on Structor Market
+
+In this tutorial you will create a few data aware components for Spring Data REST interface. You need to install online generators for such components, but you will not be authorized to call online generators if you are not signed in to Structor Market.
+
+So, if you don't have an account on Structor Market, please create it [here](http://probe.helmetrex.com/sign-up).
+
+#### Starting Structor
+
+If you've not installed Structor yet, please install it by this command:
+`
+npm i structor -g
+`
+
+Create an empty folder on file system and enter in it (assuming you are doing that in command line). 
+Then type the following to run structor:
+`
+structor
+`
+
+**Note:**  Structor should be installed in global scope, otherwise you will not be able to clone this repo in created folder.
+
+After Stuctor successfully started open the address `http://localhost:2222/structor` in your browser.
+
+**Note:** If you prefer to run Structor on another port use command option for port specification: `structor -p 4000`
+
+In the browser you will see the project gallery, find "sdr-bootstrap-prepack" project there and start cloning it by clicking on "clone" link in thumbnail of the project.
+
+Cloning will take approximately 2-3 minutes. It takes so much time due to the npm installation process - it tries to install all needed dependecies from npm repository.
+
+**Note:** Sometimes npm 3 makes installation for a too long time, and Structor looses the control of this process. In that case it is recommended to reload entire page of the browser, and run `npm install` command manually in project's directory.
+
+Right after finishing cloning process, you'll see the workspace of the Stuctor with the home page of the project.
+
+#### Create List component
+
+It is time to get familiar with the source code of the project. If you look at the structure of files inside the project directory you'll find two folders `server` and `client`. `server` dir includes all Java source code, and we need to find the source code of database entities in it right now.
+
+Go to `server/src/main/java/com/changeme/repository` directory. Here you can see classes which describe database schema in terms of Spring Data entities and repositories. If you are not familiar with Spring Data, please read about this in [Reference Documentation](http://docs.spring.io/spring-data/jpa/docs/current/reference/html/).
+
+There are already four entities: `AccessLevel`, `Department`, `Person`, `UserProfile`. We are interested only in 3 of them, because `UserProfile` is used for authentication mechanism and should not be exposed as Data REST enpoint.
 
 
 
