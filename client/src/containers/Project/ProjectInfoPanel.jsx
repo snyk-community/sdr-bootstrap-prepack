@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Panel } from 'react-bootstrap';
-import { testRESTful_ProjectInfoPanel, selector_ProjectInfoPanel } from '../../actions/index.js';
+import { testRESTful_ProjectInfoPanel, selector_ProjectInfoPanel, signIn_AutoSignIn } from '../../actions/index.js';
 
 class ProjectInfoPanel extends Component {
 
@@ -15,6 +15,7 @@ class ProjectInfoPanel extends Component {
     }
     handleRefresh(){
         const {dispatch} = this.props;
+        dispatch(signIn_AutoSignIn());
         dispatch(testRESTful_ProjectInfoPanel());
     }
 
