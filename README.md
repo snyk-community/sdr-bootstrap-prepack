@@ -27,6 +27,20 @@ All tools and libraries of this project are neatly configured and works perfect 
 
 ## What's inside?
 
+<table>
+ <tbody>
+  <th>
+   <td padding="5px">iruwero</td>
+   <td padding="5px">weiruyroie</td>
+  </th>
+  <tr>
+   <td padding="5px">wiuerwueir</td>
+   <td padding="5px">weoriueroiu</td>
+  </tr>
+ </tbody>
+</table>
+
+
 | Server part | Client part |
 |-------------|-------------|
 |Spring Boot | React |
