@@ -141,6 +141,18 @@ As you already know, in Structor you are working with live Web application, whic
 
 Switch to `Live preview mode` in Structor, and click `Sign In` link on top navigation toolbar on the home page.
 
+<table style="width: 100%">
+ <tbody>
+  <tr>
+   <td style="width: 30%">&nbsp;</td>
+   <td>
+    <img style="width: 100%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/home_page.png" />
+   </td>
+   <td style="width: 30%">&nbsp;</td>
+  </tr>
+ </tbody>
+</table>
+
 #### Create List component
 
 ### How it works
