@@ -15,7 +15,7 @@ public interface PersonView {
 
     public Float getSalary();
 
-    public boolean getProbationPeriod();
+    public boolean getIsProbationPeriod();
 
     @Description("{title: 'Date of birth', targetProp: 'birthDate'}")
     public Date getBirthDate();

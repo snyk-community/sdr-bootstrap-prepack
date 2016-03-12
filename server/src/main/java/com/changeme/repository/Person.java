@@ -68,7 +68,7 @@ public class Person {
         this.birthDate = birthDate;
     }
 
-    public boolean getProbationPeriod() {
+    public boolean getIsProbationPeriod() {
         return isProbationPeriod;
     }
 
