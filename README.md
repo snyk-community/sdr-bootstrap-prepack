@@ -2,7 +2,7 @@
 
 This repo is a [Structor](https://github.com/ipselon/structor) starter project for [Spring Boot](http://projects.spring.io/spring-boot/) Web application with [React](https://facebook.github.io/react/) UI. 
 
-## What can be built with this project?
+## What can be built?
 
 Choosing this project as a starter project you can easily build a Web application for database CRUD operations with REST interface, authentication, and dynamic and good looking Web UI. 
 
@@ -15,17 +15,17 @@ Here you will find a wide range (which is getting wider day by day) of the compo
   * more than 40 components from popular labraries React Boostrap and React Widgets,
   * many adopted components such as form input elements, navigation through pages and others.
 
-In contrast to majority of the Web apps for database CRUD operations, UI components of the project can display linked entities collections, interact with each other, can search data, has different types of input elements including dropdowns, date calendars and others.
+In contrast to majority of the Web apps for database CRUD operations, UI components of the project can display linked entities collections, interact with each other, search data, and has different types of input elements including dropdowns, date calendars and others.
 
 It's worth a mention that all UI components are created and manipulated by a visual builder, which gives an instant feedback about how components look and feel.
 
 All tools and libraries of this project are neatly configured and works perfect with each other, also you will find here a very simple building process of the whole application.
 
 #### tl;dr
-* Create an administration Web app for database with cool and dynamic UI.
+* Create a Web app for database with cool and dynamic UI.
 * Build it as a single jar file and deploy it on the server.
 
-## What is inside?
+## What's inside?
 
 | Server part | Client part |
 |-------------|-------------|
@@ -57,12 +57,12 @@ It is needed to explain that this project is designed to work with Structor, wic
 There are 3 methods to get components in a Stuctor project:
 
 1. Pre-created components, which have already written source code and can be found in the source code repository of the project
-2. Build-in source code generators, which generate the source code from the composition of components on the page. They also can be found in the proejct source code.
+2. Build-in source code generators, which generate the source code from the composition of components on the page. They also can be found in the project source code.
 3. Online source code generators, which generate the source code of the advanced components, such as data grids or forms for RESTful interface. They can be installed into project from [Structor Market](https://helmetrex.com) and behave as they are build-in generators. Look at [the list of available generators](http://probe.helmetrex.com/generators?projectId=175) for this project.
 
 #### Create an account on Structor Market
 
-In this tutorial you will create a few data aware components for Spring Data REST interface. You need to install online generators for such components. But if you are not signed in Structor Market you will not be authorized to call online generators from Structor.
+In this tutorial we will create a few data aware components for Spring Data REST interface. You need to install online generators for such components. But if you are not signed in Structor Market you will not be authorized to call online generators from Structor.
 
 If you don't have an account on Structor Market, please create it [here](http://probe.helmetrex.com/sign-up).
 
@@ -81,7 +81,7 @@ structor
 
 **Note:**  Structor should be installed in global scope, otherwise you will not be able to clone this repo in folder because folder will not be empty in case structor installed there.
 
-After Stuctor successfully started open the address `http://localhost:2222/structor` in your browser.
+After Stuctor successfully started open this address `http://localhost:2222/structor` in your browser.
 
 **Note:** If you prefer to run Structor on another port use command option where port is specified: `structor -p 4000`
 
@@ -91,7 +91,7 @@ Cloning will take approximately 2 or 3 minutes. It takes so much time due to the
 
 **Note:** Sometimes npm 3 makes installation for a too long time, and Structor looses the control of this process. In that case it is recommended to reload entire page of the browser, and run `npm install` command manually in project's directory.
 
-Right after finishing cloning process, you'll see the workspace of the Stuctor with the home page of the project.
+Right after finishing cloning process, you'll see the workspace of the Stuctor with the home page of the project. But leave it for the moment and switch to the source code, which appeared in our folder.
 
 #### Database entities and repositories
 
@@ -99,11 +99,47 @@ It is time to get familiar with the source code of the project. If you look at t
 
 Go to `server/src/main/java/com/changeme/repository` directory. Here you can see classes which describe database schema in terms of Spring Data entities and repositories. If you are not familiar with Spring Data, please read about this in [Reference Documentation](http://docs.spring.io/spring-data/jpa/docs/current/reference/html/).
 
-There are already four entities: `AccessLevel`, `Department`, `Person`, `UserProfile`. We are interested only in 3 of them, because `UserProfile` entity is used in authentication mechanism and should not be exposed as Data REST enpoint. However, password field will not be shown in JSON even you expose `UserProfile` repository.
+There are already four entities: `AccessLevel`, `Department`, `Person`, `UserProfile`. We are interested only in 3 of them, because `UserProfile` entity is used in authentication mechanism and should not be exposed through the REST enpoint. However, password field will not be shown in JSON even you want to expose `UserProfile`.
 
-All what we should know about entities on this stage is that entities have relations as they are a mapping of the database tables with the same relations. Spring Data and Spring Boot have all other things regarding database connections and transactions implemented and set up inside.
+All what we should know about entities on this stage is that entities have relations because they are a mapping of the database tables with the same relations. 
 
-Here a diagram of relations is:
+All other things regarding database connections and transactions are provided by Spring Boot and Spring Data accoring to the configuration, which you can find in `server/src/main/resources/application.yml` file .
+
+Here is a diagram of the relations between entities:
+
+<img src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/db_relational_schema.png" style="width: 100%" />
+
+#### Running Spring Data REST service
+
+**Q:** Why we need to start Spring Boot server before we can proceed to UI building? 
+
+**A:** You may consider that Structor is a web server which gives you the ability to edit pages and the source code of your Web application while it works. In other words, you have non stop working Web app, and each of the components in it has to be able to fetch data from the database through the REST service when you are working in Structor. Otherwise, you'll see errors in the browser console or on the page.
+
+There is one more reason - online generators of data aware components need to obtain a metadata from Spring Data REST service about exposed collections of entities, but we will learn about this later in this tutorial.
+
+Before starting the server we need to build the Java code. For your convenience there is a script which starts building, run it from the command line (assuming you are in the project directory):
+`
+./server/build-server.bsh
+`
+
+Now we need to run Spring Boot server. There is also a script for this, and you can run it by the following command:
+`
+./server/server.bsh start
+`
+
+**Note:** To stop server replace `start` with `stop` argument. Also, if you need to rebuild Java source code you don't need to stop the server, just run `build-server.bsh` script again, and it will care about stopping server and running it again after the successful building.
+
+**For Windows users:** There is no a convenient script for building the server on Windows OS so far, but we have one for running the server: `server.bat`. To build the server you have to stop it (if it is runnnig) and run maven: `mvn package`.
+
+#### Authentication mechanism
+
+Now we can back to the Structor workspace. Find on the home page a warning note about the server: we already did start the server, and it's left to authenticate to the service.
+
+The project has already implemented an authentication by token with Spring Security. There is one user account in service (this account is created by default while server is starting, to remove or change this bahaviour remove or change `server/src/main/resources/import.sql` file accordingly). By default access to all exposed REST endpoints is closed.
+
+As you already know, in Structor you are working with live Web application, which has to have an access to the REST service. So, you have to sign in into that service before creating components in order to avoid a data access denying.
+
+Switch to `Live preview mode` in Structor, and click `Sign In` link on top navigation toolbar on the home page.
 
 #### Create List component
 
