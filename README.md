@@ -89,21 +89,21 @@ In the browser you will see the projects gallery, find **sdr-bootstrap-prepack**
 
 Cloning will take approximately 2 or 3 minutes. It takes so much time due to the npm installation process - it tries to install all needed dependecies from the npm repository.
 
-**Note:** Sometimes npm 3 makes installation for a too long time, and Structor looses the control of this process. In that case it is recommended to reload entire page of the browser, and run `npm install` command manually in project's directory.
+**Note:** Sometimes npm 3 makes installation for a too long time, and Structor looses the control of this process. In that case it is recommended to run `npm install` command manually in project's directory and then reload entire page in the browser.
 
 Right after finishing cloning process, you'll see the workspace of the Stuctor with the home page of the project. But leave it for the moment and switch to the source code, which appeared in our folder.
 
 #### Database entities and repositories
 
-It is time to get familiar with the source code of the project. If you look at the structure of files inside the project directory you'll find two folders `server` and `client`. `server` dir includes all Java source code, and we need to find the source code of database entities in it right now.
+It is time to get familiar with the source code of the project. If you look at the structure of files inside the project directory you'll find two folders `server` and `client`. `server` dir includes all Java source code, and we need to find the source code of database entities in it.
 
-Go to `server/src/main/java/com/changeme/repository` directory. Here you can see classes which describe database schema in terms of Spring Data entities and repositories. If you are not familiar with Spring Data, please read about this in [Reference Documentation](http://docs.spring.io/spring-data/jpa/docs/current/reference/html/).
+Go to `server/src/main/java/com/changeme/repository` directory. Here you can see classes which describe a database schema with entities and their repositories speaking in terms of Spring Data. If you are not familiar with Spring Data, please read about this in [Spring Data Reference Documentation](http://docs.spring.io/spring-data/jpa/docs/current/reference/html/).
 
 There are already four entities: `AccessLevel`, `Department`, `Person`, `UserProfile`. We are interested only in 3 of them, because `UserProfile` entity is used in authentication mechanism and should not be exposed through the REST enpoint. However, password field will not be shown in JSON even you want to expose `UserProfile`.
 
-All what we should know about entities on this stage is that entities have relations because they are a mapping of the database tables with the same relations. 
+All what we should know about entities on this stage is that entities have relations with each other because they are a mapping of the database tables with the same relations. 
 
-All other things regarding database connections and transactions are provided by Spring Boot and Spring Data accoring to the configuration, which you can find in `server/src/main/resources/application.yml` file .
+All other things regarding the database initialization, its connections and transactions are provided by Spring Boot and Spring Data accoring to the configuration, which you can find in `server/src/main/resources/application.yml` file .
 
 Here is a diagram of the relations between entities:
 
@@ -113,11 +113,11 @@ Here is a diagram of the relations between entities:
 
 **Q:** Why we need to start Spring Boot server before we can proceed to UI building? 
 
-**A:** You may consider that Structor is a web server which gives you the ability to edit pages and the source code of your Web application while it works. In other words, you have non stop working Web app, and each of the components in it has to be able to fetch data from the database through the REST service when you are working in Structor. Otherwise, you'll see errors in the browser console or on the page.
+**A:** You may consider that Structor is a Web server, which gives you the ability to edit pages and the source code of your Web application while it is working. In other words, you have non stop working Web app, and each of the components in it has to be able to fetch data from the database through the REST service when you are working in Structor. Otherwise, you'll see errors in the browser console or on the page.
 
 There is one more reason - online generators of data aware components need to obtain a metadata from Spring Data REST service about exposed collections of entities, but we will learn about this later in this tutorial.
 
-Before starting the server we need to build the Java code. For your convenience there is a script which starts building, run it from the command line (assuming you are in the project directory):
+Before starting the server we need to build the Java code. For your convenience there is a script which starts building process, run it from the command line (assuming you are in the project directory):
 `
 ./server/build-server.bsh
 `
@@ -133,7 +133,7 @@ Now we need to run Spring Boot server. There is also a script for this, and you 
 
 #### Authentication mechanism
 
-Now we can back to the Structor workspace. Find on the home page a warning note about the server: we already did start the server, and it's left to authenticate to the service.
+Now we can back to the Structor workspace. Find on the home page a warning note about the server: we already did start the server, and it's left to sign in to the service.
 
 The project has already implemented an authentication by token with Spring Security. There is one user account in service (this account is created by default while server is starting, to remove or change this bahaviour remove or change `server/src/main/resources/import.sql` file accordingly). By default access to all exposed REST endpoints is closed.
 
