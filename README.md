@@ -34,7 +34,7 @@ All tools and libraries of this project are neatly configured and works perfect 
 |Spring Data REST | React Bootrap |
 |Spring MVC | React Widgets |
 |Spring Security | Redux |
-|   | and other JS libs |
+| and other Java libs | and other JS libs |
 
 
 ## Getting started
@@ -50,7 +50,7 @@ Assuming you are familiar with Spring/Sptring Data/Spring Security and React/Red
 
 ### Brief tutorial
 
-It is needed to explain that this project is designed to work with Structor, wich has such a nice feature as the source code generators for React components. If you are not familiar with Structor, it is recommended to watch <a href="https://www.youtube.com/watch?v=AY65e6Ry_rY" target="_blank">this video</a> and <a href="https://www.youtube.com/watch?v=JLz8B0XJPyk" target="_blank">this video</a> before starting this tutorial.
+It is needed to explain that this project is designed to work with Structor, wich has such a nice feature as the source code generators for React components, and which we will use intensively in this tutorial. So, if you are not familiar with Structor, it is recommended to watch <a href="https://www.youtube.com/watch?v=AY65e6Ry_rY" target="_blank">this video</a> and <a href="https://www.youtube.com/watch?v=JLz8B0XJPyk" target="_blank">this video</a> before starting this tutorial.
 
 #### Three sources of components
 
@@ -79,7 +79,7 @@ Then type the following to run Structor:
 structor
 `
 
-**Note:**  Structor should be installed in global scope, otherwise you will not be able to clone this repo in folder because folder has to be empty.
+**Note:**  Structor should be installed in global scope, otherwise you will not be able to clone this repo in folder because folder will not be empty in case structor installed there.
 
 After Stuctor successfully started open the address `http://localhost:2222/structor` in your browser.
 
@@ -93,15 +93,19 @@ Cloning will take approximately 2 or 3 minutes. It takes so much time due to the
 
 Right after finishing cloning process, you'll see the workspace of the Stuctor with the home page of the project.
 
-#### Create List component
+#### Database entities and repositories
 
 It is time to get familiar with the source code of the project. If you look at the structure of files inside the project directory you'll find two folders `server` and `client`. `server` dir includes all Java source code, and we need to find the source code of database entities in it right now.
 
 Go to `server/src/main/java/com/changeme/repository` directory. Here you can see classes which describe database schema in terms of Spring Data entities and repositories. If you are not familiar with Spring Data, please read about this in [Reference Documentation](http://docs.spring.io/spring-data/jpa/docs/current/reference/html/).
 
-There are already four entities: `AccessLevel`, `Department`, `Person`, `UserProfile`. We are interested only in 3 of them, because `UserProfile` is used for authentication mechanism and should not be exposed as Data REST enpoint.
+There are already four entities: `AccessLevel`, `Department`, `Person`, `UserProfile`. We are interested only in 3 of them, because `UserProfile` entity is used in authentication mechanism and should not be exposed as Data REST enpoint. However, password field will not be shown in JSON even you expose `UserProfile` repository.
 
+All what we should know about entities on this stage is that entities have relations as they are a mapping of the database tables with the same relations. Spring Data and Spring Boot have all other things regarding database connections and transactions implemented and set up inside.
 
+Here a diagram of relations is:
+
+#### Create List component
 
 ### How it works
 
