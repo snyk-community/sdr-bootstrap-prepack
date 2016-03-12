@@ -9,6 +9,7 @@ import javax.annotation.PostConstruct;
 import java.sql.Date;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.*;
 
 @Service
@@ -26,7 +27,7 @@ public class DataInitialization {
             "Ann", "John", "Eliot", "George", "Marian", "Julia", "Elvis"
     };
 
-    private static final NumberFormat numberFormat = new DecimalFormat("###.00");;
+    private static final NumberFormat numberFormat = new DecimalFormat("###.00");
 
     @Autowired
     private DepartmentRepository departmentRepository;
@@ -39,6 +40,8 @@ public class DataInitialization {
 
     @PostConstruct
     public void init(){
+
+        Locale.setDefault(Locale.US);
 
         List<AccessLevel> accessLevels = new ArrayList<>();
         for(int i = 0; i < departmentNames.length; i++){
@@ -64,7 +67,11 @@ public class DataInitialization {
             cal.set(1980 + rnd.nextInt(10), Calendar.MAY, 17 + rnd.nextInt(10));
 
             Person person = new Person();
-            person.setSalary(Float.parseFloat(numberFormat.format(rnd.nextDouble() * 1000)));
+            try {
+                person.setSalary(numberFormat.parse(numberFormat.format(rnd.nextDouble() * 1000)).floatValue());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
             person.setBirthDate(new Date(cal.getTimeInMillis()));
             person.setFirstName(firstNames[rnd.nextInt(firstNames.length - 1)]);
             person.setLastName(lastNames[rnd.nextInt(lastNames.length - 1)]);
