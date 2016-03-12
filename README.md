@@ -52,9 +52,9 @@ Assuming you are familiar with Spring/Sptring Data/Spring Security and React/Red
 
 It is needed to explain that this project is designed to work with Structor, wich has such a nice feature as the source code generators for React components. If you are not familiar with Structor, it is recommended to watch <a href="https://www.youtube.com/watch?v=AY65e6Ry_rY" target="_blank">this video</a> and <a href="https://www.youtube.com/watch?v=JLz8B0XJPyk" target="_blank">this video</a> before starting this tutorial.
 
-#### 3 types of components
+#### Three sources of components
 
-There are 3 types of components in Stuctor project:
+There are 3 methods to get components in a Stuctor project:
 
 1. Pre-created components, which have already written source code and can be found in the source code repository of the project
 2. Build-in source code generators, which generate the source code from the composition of components on the page. They also can be found in the proejct source code.
@@ -62,32 +62,32 @@ There are 3 types of components in Stuctor project:
 
 #### Create an account on Structor Market
 
-In this tutorial you will create a few data aware components for Spring Data REST interface. You need to install online generators for such components, but you will not be authorized to call online generators if you are not signed in to Structor Market.
+In this tutorial you will create a few data aware components for Spring Data REST interface. You need to install online generators for such components. But if you are not signed in Structor Market you will not be authorized to call online generators from Structor.
 
-So, if you don't have an account on Structor Market, please create it [here](http://probe.helmetrex.com/sign-up).
+If you don't have an account on Structor Market, please create it [here](http://probe.helmetrex.com/sign-up).
 
 #### Starting Structor
 
-If you've not installed Structor yet, please install it by this command:
+If you do not have Structor yet, please install it by this command:
 `
 npm i structor -g
 `
 
-Create an empty folder on file system and enter in it (assuming you are doing that in command line). 
-Then type the following to run structor:
+Create an empty folder and enter in it (assuming you are doing that in command line). 
+Then type the following to run Structor:
 `
 structor
 `
 
-**Note:**  Structor should be installed in global scope, otherwise you will not be able to clone this repo in created folder.
+**Note:**  Structor should be installed in global scope, otherwise you will not be able to clone this repo in folder because folder has to be empty.
 
 After Stuctor successfully started open the address `http://localhost:2222/structor` in your browser.
 
-**Note:** If you prefer to run Structor on another port use command option for port specification: `structor -p 4000`
+**Note:** If you prefer to run Structor on another port use command option where port is specified: `structor -p 4000`
 
-In the browser you will see the project gallery, find "sdr-bootstrap-prepack" project there and start cloning it by clicking on "clone" link in thumbnail of the project.
+In the browser you will see the projects gallery, find **sdr-bootstrap-prepack** project there and start cloning it by clicking on `clone` link.
 
-Cloning will take approximately 2-3 minutes. It takes so much time due to the npm installation process - it tries to install all needed dependecies from npm repository.
+Cloning will take approximately 2 or 3 minutes. It takes so much time due to the npm installation process - it tries to install all needed dependecies from the npm repository.
 
 **Note:** Sometimes npm 3 makes installation for a too long time, and Structor looses the control of this process. In that case it is recommended to reload entire page of the browser, and run `npm install` command manually in project's directory.
 
