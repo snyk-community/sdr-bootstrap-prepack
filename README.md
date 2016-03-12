@@ -21,25 +21,21 @@ It's worth a mention that all UI components are created and manipulated by a vis
 
 All tools and libraries of this project are neatly configured and works perfect with each other, also you will find here a very simple building process of the whole application.
 
+#### tl;dr
+* Create an administration Web app for database with cool and dynamic UI.
+* Build it as a single jar file and deploy it on the server.
 
 ## What is inside?
 
-### Server part
+| Server part | Client part |
+|-------------|-------------|
+|Spring Boot | React |
+|Spring Data | React Router |
+|Spring Data REST | React Bootrap |
+|Spring MVC | React Widgets |
+|Spring Security | Redux |
+|   | and other JS libs |
 
-* Spring Boot
-* Spring Data
-* Spring Data REST
-* Spring MVC
-* Spring Security
-
-### Client part
-
-* React
-* React Router
-* React Bootrap
-* React Widgets
-* Redux
-* and other JS libs
 
 ## Getting started
 
@@ -50,7 +46,7 @@ All tools and libraries of this project are neatly configured and works perfect 
 * <a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank">npm 3</a>
 * <a href="https://www.npmjs.com/package/structor" target="_blank">Structor 0.2.9</a>
 
-Assuming you are familiar with Spring and Sptring Data/Hibernate, React/Redux/React Router.
+Assuming you are familiar with Spring/Sptring Data/Spring Security and React/Redux/React Router.
 
 ### Brief tutorial
 
