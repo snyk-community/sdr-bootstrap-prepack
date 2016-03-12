@@ -107,7 +107,9 @@ All other things regarding the database initialization, its connections and tran
 
 Here is a diagram of the relations between entities:
 
-<img src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/db_relational_schema.png" style="width: 100%" />
+<p align="center">
+ <img src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/db_relational_schema.png" style="width: 100%" />
+</p>
 
 #### Running Spring Data REST service
 
@@ -140,19 +142,18 @@ The project has already implemented an authentication by token with Spring Secur
 As you already know, in Structor you are working with live Web application, which has to have an access to the REST service. So, you have to sign in into that service before creating components in order to avoid a data access denying.
 
 Switch to `Live preview mode` in Structor, and click `Sign In` link on top navigation toolbar on the home page.
+<p align="center">
+ <img width="60%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/home_page.png" />
+</p>
 
-<table style="width: 100%">
+<table border="0" width="100%">
  <tbody>
   <tr>
-   <td style="width: 30%">&nbsp;</td>
-   <td>
-    <img style="width: 100%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/home_page.png" />
-   </td>
-   <td style="width: 30%">&nbsp;</td>
+   <td>wiuerwueir</td>
+   <td>weoriueroiu</td>
   </tr>
  </tbody>
 </table>
-
 #### Create List component
 
 ### How it works
