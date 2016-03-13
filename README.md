@@ -58,7 +58,7 @@ All tools and libraries of this project are neatly configured and perfectly work
  * [Create a Form component](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#create-a-form-component)
  * [Create a Pagination component](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#create-a-pagination-component)
  * [Build a Web application](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#build-a-web-application)
- * [Build a Web application](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#build-a-web-application)
+
 
 ### Prerequisites
 
