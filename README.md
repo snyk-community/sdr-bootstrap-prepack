@@ -15,7 +15,7 @@ Here you will find a wide range of the components for sophisticated Web UI:
   * more than 40 components from popular labraries React Boostrap and React Widgets,
   * many adopted components such as form input elements, navigation through pages and others.
 
-In contrast to majority of the Web apps for database CRUD operations, UI components of the project can display linked entities collections, interact with each other, search data, and has different types of input elements including dropdowns, calendars and others.
+In contrast to majority of the Web apps for database CRUD operations, UI components of the project can display collections of linked entities, interact with each other, search data, and has different types of input elements including dropdowns, calendars and others.
 
 It's worth a mention that all UI components are created and manipulated by a visual builder, which gives an instant feedback about how components look and feel.
 
@@ -83,7 +83,7 @@ There are 3 methods to get components in a Stuctor project:
 
 #### Create an account on Structor Market
 
-In this tutorial we will create a few data aware components for Spring Data REST interface. You need to install online generators for such components. But if you are not signed in Structor Market you will not be authorized to call online generators from Structor.
+In this tutorial we will create a few data aware components for Spring Data REST interface. You need to install online generators for such components. But if you are not signed in Structor Market you will not be able to call online generators from Structor.
 
 If you don't have an account on Structor Market, please create it [here](http://probe.helmetrex.com/sign-up).
 
@@ -107,6 +107,10 @@ After Stuctor successfully started open this address `http://localhost:2222/stru
 **Note:** If you prefer to run Structor on another port use command option where port is specified: `structor -p 4000`
 
 In the browser you will see the projects gallery, find **sdr-bootstrap-prepack** project there and start cloning it by clicking on `clone` link.
+
+<p align="center">
+ <img width="60%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/projects_gallery.png" />
+</p>
 
 Cloning will take approximately 2 or 3 minutes. It takes so much time due to the npm installation process - it tries to install all needed dependecies from the npm repository.
 
