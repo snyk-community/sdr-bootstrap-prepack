@@ -1,6 +1,6 @@
-# Spring Data REST Bootstrap prepack
+[![structor compatible](https://img.shields.io/badge/structor%20compatible-v0.2.9-0077dd.svg?style=flat)](http://helmetrex.com)
 
-This repo is a [Structor](https://github.com/ipselon/structor) starter project for [Spring Boot](http://projects.spring.io/spring-boot/) Web application with [React](https://facebook.github.io/react/) UI. 
+##### This repo is a [Structor](https://github.com/ipselon/structor) starter project for [Spring Boot](http://projects.spring.io/spring-boot/) Web application with [React](https://facebook.github.io/react/) UI. 
 
 ## What can be built?
 
