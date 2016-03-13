@@ -145,14 +145,14 @@ Here is a diagram of the relations between entities:
 There is one more reason - online generators of data aware components need to obtain a metadata from Spring Data REST service about exposed collections of entities, but we will learn about this later in this tutorial.
 
 Before starting the server we need to build the Java code. For your convenience there is a script which starts building process, run it from the command line (assuming you are in the project directory):
-`
+```
 ./server/build-server.bsh
-`
+```
 
 Now we need to run Spring Boot server. There is also a script for this, and you can run it by the following command:
-`
+```
 ./server/server.bsh start
-`
+```
 
 **Note:** To stop server replace `start` with `stop` argument. Also, if you need to rebuild Java source code you don't need to stop the server, just run `build-server.bsh` script again, and it will care about stopping server and running it again after the successful building.
 
