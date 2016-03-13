@@ -44,6 +44,23 @@ All tools and libraries of this project are neatly configured and perfectly work
 
 ## Getting started
 
+#### Content
+* [Prerequisites](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#prerequisites)
+* [Brief tutorial]
+ * [Three sources of components]
+ * [Create an account on Structor Market]
+ * [Starting Structor]
+ * [Database entities and repositories]
+ * [Running Spring Data REST service]
+ * [Authentication mechanism]
+ * [Create a List component]
+ * [Create a Data Grid component]
+ * [Create a Form component]
+ * [Create a Pagination component]
+ * [Build a Web application]
+* [Further readings]
+* [License]
+
 ### Prerequisites
 
 * <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">JDK 8</a>
