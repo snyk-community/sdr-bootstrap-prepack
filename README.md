@@ -6,7 +6,7 @@ This repo is a [Structor](https://github.com/ipselon/structor) starter project f
 
 Choosing this project as a starter project you can easily build a Web application for database CRUD operations with REST interface, authentication, and dynamic and good looking Web UI. 
 
-Here you will find a wide range (which is getting wider day by day) of the components for sophisticated Web UI:
+Here you will find a wide range of the components for sophisticated Web UI:
   * Data Grid components with sorting, paging, editing and deleting capabilities,
   * List components for collections,
   * Form components for adding, editing records in collections,
@@ -62,8 +62,8 @@ It is needed to explain that this project is designed to work with Structor, wic
 There are 3 methods to get components in a Stuctor project:
 
 1. Pre-created components, which have already written source code and can be found in the source code repository of the project
-2. Build-in source code generators, which generate the source code from the composition of components on the page. They also can be found in the project source code.
-3. Online source code generators, which generate the source code of the advanced components, such as data grids or forms for RESTful interface. They can be installed into project from [Structor Market](https://helmetrex.com) and behave as they are build-in generators. Look at [the list of available generators](http://probe.helmetrex.com/generators?projectId=175) for this project.
+2. Built-in source code generators, which generate the source code from the composition of components on the page. They also can be found in the project source code.
+3. Online source code generators, which generate the source code of the advanced components, such as data grids or forms for RESTful interface. They can be installed into project from [Structor Market](https://helmetrex.com) and behave as they are built-in generators. Look at [the list of available generators](http://probe.helmetrex.com/generators?projectId=175) for this project.
 
 #### Create an account on Structor Market
 
@@ -169,6 +169,125 @@ In newly opened tab of the browser choose `Available generators` tab. And find g
 <p align="center">
  <img width="60%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/generator_card_1.png" />
 </p>
+
+Now we have the list generator installed in our project. Let's switch to the Structor workspace, and switch to edit mode.
+
+This project has three pages with routes:
+* `/home`
+* `/user-profile`
+* `/data-grid`
+
+With two of them you are already familiar, now go to the `/data-grid` page. To do this select the route from a routes dropdown list in the top toolbar.
+
+We will see a grid with 4 Panel components in it. Each Panel component indicate a place where new component should be placed. 
+So, select Panel component (click on it) right under `Departments` title. 
+
+Open dropdown list from the green button on the component toolbar (rigth above of selected component) and choose `Generate source code` option as it is shown on screenshot.
+
+**Note:** If you missed and some other element on the page was selected, use breadcrumbs navigation panel right above the page area to correct the selection.
+ 
+<p align="center">
+ <img width="60%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/data_grid_page_1.png" />
+</p>
+
+By clicking on `Generate source code` we started the component generation wizard, and now we have to enter a group name and a component name.
+You may choose any existing group or enter new one. In this tutorial we will place all components source code into `Tutotial` group. 
+And the name of our list component will be `DepartmentList`
+
+<p align="center">
+ <img width="60%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/data_grid_page_2.png" />
+</p>
+
+The next step is for choosing a generator for our component, here we can find built-in generators and online generators as well. 
+Find here newly installed generator for list component and click on its label.
+
+<p align="center">
+ <img width="60%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/data_grid_page_3.png" />
+</p>
+
+This step is very important because here we need to understand what metadata is corresponding to our REST service interface.
+Metadata for generators has form of a JSON object structure, and each generator has its own structure. 
+But SpringDataRest category of generators, from which we installed the list generator, has almost identical structure. 
+
+Metadata of SpringDataRest generators should describe what entities you want to be displayed by particular component. 
+According to the Spring Data REST specification, we can have two types of presentation of the entity. The first is the entity itself - all fields which it has. 
+And the second id the entity projection - can include fields from entity or fields which take values from linked entities fields values.
+Read about Spring Data REST projections in <a href="http://docs.spring.io/spring-data/rest/docs/current/reference/html/#projections-excerpts.projections" target="_blank">Reference Documentation</a>.
+Please examine the source code of `DepartmentView` projection in file `server/com/changeme/repository/DepartmentView` for `Department` entity.
+
+```java
+@Projection(name="departmentView", types = {Department.class})
+public interface DepartmentView {
+
+    @Description("{title: 'Department', targetProp: 'name'}")
+    @Value("[#{target.accessLevel.description}] #{target.name}")
+    public String getFullName();
+
+}
+```
+
+Here we can see that projection has name `departmentView` and one field `fullName`. 
+According to the annotations this field will display combined value from linked `AccessLevel` entity field `description` and `Department` entity field `name`.
+  
+Also, you may notice annotation `@Description` with string value similar to JSON object, this is an additional information for generators, 
+read more detailed explanation in [Description annotation format]() article.
+  
+The metadata of the list generator has following structure:
+  
+```json5
+{
+    "collection": {
+        "entity": "enter name of entity",
+        "projection": "if you want to see a projection"
+    }
+}
+```
+
+`entity` field stands for entity name as it is written in Spring Data REST metadata.
+`projection` field stands for an entity projection as it is written in Spring Data REST metadata.
+
+About what is metadata in Spring Data REST you may read in <a href="http://docs.spring.io/spring-data/rest/docs/current/reference/html/#metadata.alps" target="_blank">Reference Documentation</a> for ALPS.
+
+Our REST service instance has also a HAL browser which display information of ALPS and HATEOAS metadata. 
+You may check it by opening `http://localhost:8080/api/browser` address in browser. There you may find the names of all our entities, their collections, projections, custom search methods, etc.
+
+According to the ALPS we need to enter into our metadata structure the following values:
+
+```json5
+{
+    "collection": {
+        "entity": "department",
+        "projection": "departmentView"
+    }
+}
+```
+
+<p align="center">
+ <img width="60%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/data_grid_page_4.png" />
+</p>
+
+Click on the `Next` button and wait for generator, at that moment generator checks your data with ALPS and sends data to the Structor Market service.
+As a result we will have a bunch of generated source code files, which will be displayed in the next wizard dialog.
+
+<p align="center">
+ <img width="60%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/data_grid_page_5.png" />
+</p>
+
+Just click on `Save` button and Webpack will do its work - compile all code and reload the page with new `DepartmentList` component.
+This component is fully functional and displays all data from departments collection, what you may check in the live preview mode.
+
+<p align="center">
+ <img width="60%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/data_grid_page_6.png" />
+</p>
+
+**State diagram**
+
+Here is a diagram which explains all processes for the component source code generation.
+
+<p align="center">
+ <img width="90%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/HowGeneratorsWork.png" />
+</p>
+
 
 ### How it works
 
