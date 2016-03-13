@@ -19,7 +19,7 @@ In contrast to majority of the Web apps for database CRUD operations, UI compone
 
 It's worth a mention that all UI components are created and manipulated by a visual builder, which gives an instant feedback about how components look and feel.
 
-All tools and libraries of this project are neatly configured and works perfect with each other, also you will find here a very simple building process of the whole application.
+All tools and libraries of this project are neatly configured and perfectly work with each other, also you will find here a very simple building process of the whole application.
 
 #### tl;dr
 * Create a Web app for database with cool and dynamic UI.
