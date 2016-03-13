@@ -7,12 +7,12 @@
 Choosing this project as a starter project you can easily build a Web application for database CRUD operations with REST interface, authentication, and dynamic and good looking Web UI. 
 
 Here you will find a wide range of the components for sophisticated Web UI:
-  * Data Grid components with sorting, paging, editing and deleting capabilities,
-  * List components for collections,
-  * Form components for adding, editing records in collections,
-  * Form components for filtering data in collections,
-  * Pagination components for the navigation though pages in Data Grids,
-  * more than 40 components from popular labraries React Boostrap and React Widgets,
+  * Data Grid components with sorting, paging, editing and deleting capabilities.
+  * List components for collections.
+  * Form components for adding and editing records in collections.
+  * Form components for filtering data in collections.
+  * Pagination components for the navigation though pages in Data Grids.
+  * more than 40 components from popular libraries React Boostrap and React Widgets,
   * many adopted components such as form input elements, navigation through pages and others.
 
 In contrast to majority of the Web apps for database CRUD operations, UI components of the project can display collections of linked entities, interact with each other, search data, and has different types of input elements including dropdowns, calendars and others.
