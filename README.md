@@ -15,7 +15,7 @@ Here you will find a wide range (which is getting wider day by day) of the compo
   * more than 40 components from popular labraries React Boostrap and React Widgets,
   * many adopted components such as form input elements, navigation through pages and others.
 
-In contrast to majority of the Web apps for database CRUD operations, UI components of the project can display linked entities collections, interact with each other, search data, and has different types of input elements including dropdowns, date calendars and others.
+In contrast to majority of the Web apps for database CRUD operations, UI components of the project can display linked entities collections, interact with each other, search data, and has different types of input elements including dropdowns, calendars and others.
 
 It's worth a mention that all UI components are created and manipulated by a visual builder, which gives an instant feedback about how components look and feel.
 
@@ -25,21 +25,12 @@ All tools and libraries of this project are neatly configured and works perfect 
 * Create a Web app for database with cool and dynamic UI.
 * Build it as a single jar file and deploy it on the server.
 
+<p align="center">
+ <img width="60%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/screenshot.png" />
+</p>
+
+
 ## What's inside?
-
-<table>
- <tbody>
-  <th>
-   <td padding="5px">iruwero</td>
-   <td padding="5px">weiruyroie</td>
-  </th>
-  <tr>
-   <td padding="5px">wiuerwueir</td>
-   <td padding="5px">weoriueroiu</td>
-  </tr>
- </tbody>
-</table>
-
 
 | Server part | Client part |
 |-------------|-------------|
@@ -122,7 +113,7 @@ All other things regarding the database initialization, its connections and tran
 Here is a diagram of the relations between entities:
 
 <p align="center">
- <img src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/db_relational_schema.png" style="width: 100%" />
+ <img width="60%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/db_relational_schema.png" />
 </p>
 
 #### Running Spring Data REST service
@@ -151,24 +142,33 @@ Now we need to run Spring Boot server. There is also a script for this, and you 
 
 Now we can back to the Structor workspace. Find on the home page a warning note about the server: we already did start the server, and it's left to sign in to the service.
 
-The project has already implemented an authentication by token with Spring Security. There is one user account in service (this account is created by default while server is starting, to remove or change this bahaviour remove or change `server/src/main/resources/import.sql` file accordingly). By default access to all exposed REST endpoints is closed.
+The project has already implemented an authentication by token with Spring Security. There is some user accounts in service (they are created by default while server is starting, to remove or change this remove or change `server/src/main/resources/import.sql` file accordingly). Access to all exposed data repositoires is forbidden.
 
-As you already know, in Structor you are working with live Web application, which has to have an access to the REST service. So, you have to sign in into that service before creating components in order to avoid a data access denying.
+As you already know, in Structor you are working with live Web application, which has to have an access to the REST service. So, you have to sign in into the service before creating components in order to avoid a data access denying.
 
 Switch to `Live preview mode` in Structor, and click `Sign In` link on top navigation toolbar on the home page.
 <p align="center">
  <img width="60%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/home_page.png" />
 </p>
 
-<table border="0" width="100%">
- <tbody>
-  <tr>
-   <td>wiuerwueir</td>
-   <td>weoriueroiu</td>
-  </tr>
- </tbody>
-</table>
-#### Create List component
+Enter login `user` and password `password` in appeared sign in form. After successful authentication you will be redirected to the home page back.
+<p align="center">
+ <img width="60%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/sign_in_form_page.png" />
+</p>
+
+Now we are ready to create first component: a list of departments.
+
+#### Create a List component
+
+First of all, go to the main menu and select `Generators` option.
+<p align="center">
+ <img width="30%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/main_menu_with_generators.png" />
+</p>
+
+In newly opened tab of the browser choose `Available generators` tab. And find generator with key: `SpringDataRest.Lists.Entity.Toggle`. You can use filer menu on the left-side panel in onrder to find generator faster. Then just click on `Install` button in the generator card.
+<p align="center">
+ <img width="60%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/generator_card_1.png" />
+</p>
 
 ### How it works
 
