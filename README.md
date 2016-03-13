@@ -165,7 +165,7 @@ First of all, go to the main menu and select `Generators` option.
  <img width="30%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/main_menu_with_generators.png" />
 </p>
 
-In newly opened tab of the browser choose `Available generators` tab. And find generator with key: `SpringDataRest.Lists.Entity.Toggle`. You can use filer menu on the left-side panel in onrder to find generator faster. Then just click on `Install` button in the generator card.
+In opened tab of the browser choose `Available generators` tab. And find generator with key: `SpringDataRest.Lists.Entity.Toggle`. You can use filer menu on the left-side panel in order to find generator faster. Then just click on `Install` button in the generator card.
 <p align="center">
  <img width="60%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/generator_card_1.png" />
 </p>
@@ -179,7 +179,7 @@ This project has three pages with routes:
 
 With two of them you are already familiar, now go to the `/data-grid` page. To do this select the route from a routes dropdown list in the top toolbar.
 
-We will see a grid with 4 Panel components in it. Each Panel component indicate a place where new component should be placed. 
+We will see a grid with four Panel components in it. Each Panel component indicate a place where new component should be placed. 
 So, select Panel component (click on it) right under `Departments` title. 
 
 Open dropdown list from the green button on the component toolbar (rigth above of selected component) and choose `Generate source code` option as it is shown on screenshot.
@@ -210,10 +210,13 @@ Metadata for generators has form of a JSON object structure, and each generator 
 But SpringDataRest category of generators, from which we installed the list generator, has almost identical structure. 
 
 Metadata of SpringDataRest generators should describe what entities you want to be displayed by particular component. 
-According to the Spring Data REST specification, we can have two types of presentation of the entity. The first is the entity itself - all fields which it has. 
-And the second id the entity projection - can include fields from entity or fields which take values from linked entities fields values.
+According to the Spring Data REST specification, we can have two types of presentation of the entity.
+ 
+* The first is the entity itself - all fields which it has. 
+* And the second is the entity projection - can include fields from entity or fields which take values from linked entities fields values.
+
 Read about Spring Data REST projections in <a href="http://docs.spring.io/spring-data/rest/docs/current/reference/html/#projections-excerpts.projections" target="_blank">Reference Documentation</a>.
-Please examine the source code of `DepartmentView` projection in file `server/com/changeme/repository/DepartmentView` for `Department` entity.
+Now please examine the source code of `DepartmentView` projection in file `server/com/changeme/repository/DepartmentView` for `Department` entity.
 
 ```java
 @Projection(name="departmentView", types = {Department.class})
@@ -229,10 +232,10 @@ public interface DepartmentView {
 Here we can see that projection has name `departmentView` and one field `fullName`. 
 According to the annotations this field will display combined value from linked `AccessLevel` entity field `description` and `Department` entity field `name`.
   
-Also, you may notice annotation `@Description` with string value similar to JSON object, this is an additional information for generators, 
+Also, you may notice annotation `@Description` with string value, which is similar to JSON object, this is an additional information for generators, 
 read more detailed explanation in [Description annotation format]() article.
   
-The metadata of the list generator has following structure:
+The metadata of the list generator has the following structure:
   
 ```json5
 {
@@ -243,8 +246,8 @@ The metadata of the list generator has following structure:
 }
 ```
 
-`entity` field stands for entity name as it is written in Spring Data REST metadata.
-`projection` field stands for an entity projection as it is written in Spring Data REST metadata.
+* `entity` field stands for entity name as it is written in Spring Data REST metadata.
+* `projection` field stands for an entity projection as it is written in Spring Data REST metadata.
 
 About what is metadata in Spring Data REST you may read in <a href="http://docs.spring.io/spring-data/rest/docs/current/reference/html/#metadata.alps" target="_blank">Reference Documentation</a> for ALPS.
 
@@ -288,6 +291,107 @@ Here is a diagram which explains all processes for the component source code gen
  <img width="90%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/HowGeneratorsWork.png" />
 </p>
 
+#### Create a Data Grid component
+
+We have to walk through the same process to create a Data Grid component for `Person` entity:
+* Install generator with `SpringDataRest.DataGrids.Search.SortPageToggle` key.
+* Select on `/data-grid` page Panel component under title `Persons`.
+* Start generation wizard and enter `Tutorial` for group name and `PersonDataGrid` for component name.
+* Choose installed generator from `SpringDataRest` category. It has a description: 
+
+        `Data grid for displaying a collection of entities or entity projections found by a custom search method in entity's repository.` 
+
+Here we need to review the metadata structure for this generator. 
+The metadata is slightly differs from the previous generator metadata because here we want to generate a component which is listening to another component.
+
+Look at the structure:
+```json5
+{
+    "collection": {
+        "entity": "enter name of entity",
+        "projection": "if you want to see a projection",
+        "search": {
+            "name": "name of search by params"
+        }
+    },
+    "linkToComponent": "some component with valid collection signature"
+}
+```
+
+* `entity` - entity name.
+* `projection` - entity projection name.
+* `search.name` - name of the custom search method in entity repository.
+
+What the custom search method in repository explained in Spring Data JPA <a href="http://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods" target="_blank">Reference Documentation</a>   
+
+How to find the name of the custom search method for entity repository? 
+You may find the method name in ALPS metadata, or (if you did not change method path by annotation in repository Java class file) use the name of the method itself as it is written in class file.
+    
+```java
+@RepositoryRestResource(collectionResourceRel = "persons", path = "persons")
+public interface PersonRepository extends PagingAndSortingRepository<Person, Long> {
+
+    Page<Person> findByDepartment(@Param("department") Department department, Pageable pageable);
+
+}
+```
+
+As you can see, method `findByDepartment` has an input `department` parameter which corresponds to `Department` entity. 
+In other words, if we invoke this method we will get all persons in specified department. 
+ 
+As far as, our previously created component has the list of departments and we can toggle (select by clicking) any department in it, we can link new data grid component to this list.
+That means we want to select department in the list and see persons which belong to this department.
+
+Additionally, the projection of `Person` entity has name `personView` (`server/com/changeme/repository/PersonView.java` file):
+```java
+@Projection(name="personView" ,types = {Person.class})
+public interface PersonView {
+
+    public String getFirstName();
+
+    public String getLastName();
+
+    public Float getSalary();
+
+    public boolean getIsProbationPeriod();
+
+    @Description("{title: 'Date of birth', targetProp: 'birthDate'}")
+    public Date getBirthDate();
+
+    @Description("{title: 'Department', targetProp: 'department'}")
+    @Value("[#{target.department.accessLevel.description}] #{target.department.name}")
+    public String getDepartmentName();
+}
+```
+
+So, the resulting metadata for the data grid component will be:
+
+```json5
+{
+    "collection": {
+        "entity": "person",
+        "projection": "personView",
+        "search": {
+            "name": "findByDepartment"
+        }
+    },
+    "linkToComponent": "DepartmentList"
+}
+```
+
+Save the generated source code, and try to check components in live preview mode.
+
+<p align="center">
+ <img width="60%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/data_grid_page_7.png" />
+</p>
+
+**State diagram**
+
+The following diagram shows how components connect to each other, and why removing one component does not break others.
+
+<p align="center">
+ <img width="90%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/HowDataRESTComponentsWork.png" />
+</p>
 
 ### How it works
 
