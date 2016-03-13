@@ -58,6 +58,7 @@ All tools and libraries of this project are neatly configured and perfectly work
  * [Create a Form component](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#create-a-form-component)
  * [Create a Pagination component](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#create-a-pagination-component)
  * [Build a Web application](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#build-a-web-application)
+ * [Build a Web application](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#build-a-web-application)
 
 ### Prerequisites
 
@@ -248,7 +249,7 @@ Here we can see that projection has name `departmentView` and one field `fullNam
 According to the annotations this field will display combined value from linked `AccessLevel` entity field `description` and `Department` entity field `name`.
   
 Also, you may notice annotation `@Description` with string value, which is similar to JSON object, this is an additional information for generators, 
-read more detailed explanation in [Description annotation format]() article.
+read more detailed explanation in <a href="https://github.com/ipselon/sdr-bootstrap-prepack/wiki/Description-annotation-format" target="_blank">Description annotation format</a> article.
   
 The metadata of the list generator has the following structure:
   
@@ -468,8 +469,8 @@ And if you try to open `http://localhost:8080` address you will see the home pag
 
 ## Further readings
 
-* Description annotation format - why we need to add custom `Description` annotation to entities and projections.
-* Useful pre-created components - description of different components and how to use them for common use cases.
+* [Description annotation format](https://github.com/ipselon/sdr-bootstrap-prepack/wiki/Description-annotation-format) - why we need to add custom `Description` annotation to entities and projections.
+* [Useful pre-created components](https://github.com/ipselon/sdr-bootstrap-prepack/wiki/Useful-pre-created-components) - description of different components and how to use them for common use cases.
 
 ## License
 
