@@ -58,8 +58,6 @@ All tools and libraries of this project are neatly configured and perfectly work
  * [Create a Form component]
  * [Create a Pagination component]
  * [Build a Web application]
-* [Further readings]
-* [License]
 
 ### Prerequisites
 
@@ -413,7 +411,7 @@ The following diagram shows how components connect to each other, and why removi
  <img width="90%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/HowDataRESTComponentsWork.png" />
 </p>
 
-##### Create a Form component
+#### Create a Form component
  
 Just like all previous components, Form should be created by its generator. Follow these steps to create a Form component:
 
@@ -434,14 +432,14 @@ Just like all previous components, Form should be created by its generator. Foll
 </p>
 
 
-##### Create a Pagination component
+#### Create a Pagination component
 
 Try to use all above to create a `Pagination` component for `PersonDataGrid` component.
 
 If you have any troubles to do that, please ask on <a href="https://www.facebook.com/groups/structor/" target="_blank">Facebook group</a> or on our Slack channel. 
 Invitation to the Slack channel you will receive after successful account registration.
 
-##### Build a Web application
+#### Build a Web application
 
 If you've watched video tutorials <a href="https://www.youtube.com/watch?v=AY65e6Ry_rY" target="_blank">here</a> and <a href="https://www.youtube.com/watch?v=JLz8B0XJPyk" target="_blank">here</a>, 
 you might noticed that Structor has an `Export project` item in the main menu. This option will transform all created pages into React components along with React Router settings for your Web application.
@@ -468,11 +466,11 @@ Find this file here: `server/target/changeme-service-1.0-SNAPSHOT.jar`
 
 And if you try to open `http://localhost:8080` address you will see the home page of your application.
 
-### Further readings
+## Further readings
 
 * Description annotation format - why we need to add custom `Description` annotation to entities and projections.
 * Useful pre-created components - description of different components and how to use them for common use cases.
 
-### License
+## License
 
 MIT.
