@@ -142,7 +142,7 @@ Now we need to run Spring Boot server. There is also a script for this, and you 
 
 Now we can back to the Structor workspace. Find on the home page a warning note about the server: we already did start the server, and it's left to sign in to the service.
 
-The project has already implemented an authentication by token with Spring Security. There is some user accounts in service (they are created by default while server is starting, to remove or change this remove or change `server/src/main/resources/import.sql` file accordingly). Access to all exposed data repositoires is forbidden.
+The project has already implemented an authentication by token with Spring Security. There are some user accounts in service (they are created by default while server is starting, to remove or change this remove or change `server/src/main/resources/import.sql` file accordingly). Access to all exposed data repositoires is forbidden.
 
 As you already know, in Structor you are working with live Web application, which has to have an access to the REST service. So, you have to sign in into the service before creating components in order to avoid a data access denying.
 
@@ -179,7 +179,7 @@ This project has three pages with routes:
 
 With two of them you are already familiar, now go to the `/data-grid` page. To do this select the route from a routes dropdown list in the top toolbar.
 
-We will see a grid with four Panel components in it. Each Panel component indicate a place where new component should be placed. 
+We will see a grid with four Panel components in it. Each Panel component indicates a place where new component should be placed. 
 So, select Panel component (click on it) right under `Departments` title. 
 
 Open dropdown list from the green button on the component toolbar (rigth above of selected component) and choose `Generate source code` option as it is shown on screenshot.
@@ -190,7 +190,7 @@ Open dropdown list from the green button on the component toolbar (rigth above o
  <img width="60%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/data_grid_page_1.png" />
 </p>
 
-By clicking on `Generate source code` we started the component generation wizard, and now we have to enter a group name and a component name.
+By clicking on `Generate source code` we started the component generation wizard, and now we have to type a group name and a component name.
 You may choose any existing group or enter new one. In this tutorial we will place all components source code into `Tutotial` group. 
 And the name of our list component will be `DepartmentList`
 
@@ -207,16 +207,16 @@ Find here newly installed generator for list component and click on its label.
 
 This step is very important because here we need to understand what metadata is corresponding to our REST service interface.
 Metadata for generators has form of a JSON object structure, and each generator has its own structure. 
-But SpringDataRest category of generators, from which we installed the list generator, has almost identical structure. 
+But all generators from SpringDataRest category have almost identical structure. 
 
 Metadata of SpringDataRest generators should describe what entities you want to be displayed by particular component. 
-According to the Spring Data REST specification, we can have two types of presentation of the entity.
+According to the Spring Data REST specification, we can have two types of presentation of the entity:
  
 * The first is the entity itself - all fields which it has. 
 * And the second is the entity projection - can include fields from entity or fields which take values from linked entities fields values.
 
 Read about Spring Data REST projections in <a href="http://docs.spring.io/spring-data/rest/docs/current/reference/html/#projections-excerpts.projections" target="_blank">Reference Documentation</a>.
-Now please examine the source code of `DepartmentView` projection in file `server/com/changeme/repository/DepartmentView` for `Department` entity.
+Now please examine the source code of `DepartmentView` projection in file `server/com/changeme/repository/DepartmentView.java` for `Department` entity.
 
 ```java
 @Projection(name="departmentView", types = {Department.class})
@@ -251,7 +251,7 @@ The metadata of the list generator has the following structure:
 
 About what is metadata in Spring Data REST you may read in <a href="http://docs.spring.io/spring-data/rest/docs/current/reference/html/#metadata.alps" target="_blank">Reference Documentation</a> for ALPS.
 
-Our REST service instance has also a HAL browser which display information of ALPS and HATEOAS metadata. 
+Our REST service instance has also a HAL browser which displays information of ALPS and HATEOAS metadata. 
 You may check it by opening `http://localhost:8080/api/browser` address in browser. There you may find the names of all our entities, their collections, projections, custom search methods, etc.
 
 According to the ALPS we need to enter into our metadata structure the following values:
@@ -293,13 +293,16 @@ Here is a diagram which explains all processes for the component source code gen
 
 #### Create a Data Grid component
 
-We have to walk through the same process to create a Data Grid component for `Person` entity:
+We have to walk through the same process in order to create a Data Grid component for `Person` entity:
 * Install generator with `SpringDataRest.DataGrids.Search.SortPageToggle` key.
 * Select on `/data-grid` page Panel component under title `Persons`.
 * Start generation wizard and enter `Tutorial` for group name and `PersonDataGrid` for component name.
 * Choose installed generator from `SpringDataRest` category. It has a description: 
 
-        `Data grid for displaying a collection of entities or entity projections found by a custom search method in entity's repository.` 
+        `
+        Data grid for displaying a collection of entities or entity 
+        projections found by a custom search method in entity's repository.
+        ` 
 
 Here we need to review the metadata structure for this generator. 
 The metadata is slightly differs from the previous generator metadata because here we want to generate a component which is listening to another component.
@@ -322,7 +325,7 @@ Look at the structure:
 * `projection` - entity projection name.
 * `search.name` - name of the custom search method in entity repository.
 
-What the custom search method in repository explained in Spring Data JPA <a href="http://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods" target="_blank">Reference Documentation</a>   
+What the custom search method is is explained in Spring Data JPA <a href="http://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods" target="_blank">Reference Documentation</a>   
 
 How to find the name of the custom search method for entity repository? 
 You may find the method name in ALPS metadata, or (if you did not change method path by annotation in repository Java class file) use the name of the method itself as it is written in class file.
@@ -339,7 +342,7 @@ public interface PersonRepository extends PagingAndSortingRepository<Person, Lon
 As you can see, method `findByDepartment` has an input `department` parameter which corresponds to `Department` entity. 
 In other words, if we invoke this method we will get all persons in specified department. 
  
-As far as, our previously created component has the list of departments and we can toggle (select by clicking) any department in it, we can link new data grid component to this list.
+As far as our previously created component has the list of departments and we can toggle (select by clicking) any department in it, we can link new data grid component to this list.
 That means we want to select department in the list and see persons which belong to this department.
 
 Additionally, the projection of `Person` entity has name `personView` (`server/com/changeme/repository/PersonView.java` file):
@@ -393,5 +396,39 @@ The following diagram shows how components connect to each other, and why removi
  <img width="90%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/HowDataRESTComponentsWork.png" />
 </p>
 
-### How it works
+##### Create a Form component
+ 
+Just like all previous components, Form should be created by its generator. Follow these steps to create a Form component:
 
+1. Install generator with key: `SpringDataRest.Forms.AnyCollection.AddEdit.Vertical`.
+2. Select a Panel component under title: `Edit person`.
+3. Start generating the source code and choose `Vertical form for editing and creating records in a collection of entities`.
+4. Choose `Tutorial` group and type `PersonFormEdit` in name input field.
+5. In metadata dialog put the following:
+```json5
+{
+    "linkToComponent": "PersonDataGrid"
+}
+```
+6. In case of the source code is successfully generated click `Save`.
+
+<p align="center">
+ <img width="60%" src="https://raw.githubusercontent.com/ipselon/sdr-bootstrap-prepack/master/docs/img/data_grid_page_8.png" />
+</p>
+
+
+##### Create a Pagination component
+
+Try to use all above to create a `Pagination` component for `PersonDataGrid`
+
+If you have any troubles to do that, please ask on <a href="https://www.facebook.com/groups/structor/" target="_blank">Facebook group</a> or on our Slack channel. 
+Invitation to the Slack channel you will receive after successful account registration.
+
+### Further readings
+
+* Description annotation format - what and why we need to add custom `Description` annotation to entities and projections.
+* Useful pre-created components - description of different components and how to use them for common use cases.
+
+### License
+
+MIT.
