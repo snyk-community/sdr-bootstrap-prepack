@@ -46,18 +46,18 @@ All tools and libraries of this project are neatly configured and perfectly work
 
 #### Content
 * [Prerequisites](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#prerequisites)
-* [Brief tutorial]
- * [Three sources of components]
- * [Create an account on Structor Market]
- * [Starting Structor]
- * [Database entities and repositories]
- * [Running Spring Data REST service]
- * [Authentication mechanism]
- * [Create a List component]
- * [Create a Data Grid component]
- * [Create a Form component]
- * [Create a Pagination component]
- * [Build a Web application]
+* [Brief tutorial](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#brief-tutorial)
+ * [Three sources of components](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#three-sources-of-components)
+ * [Create an account on Structor Market](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#create-an-account-on-structor-market)
+ * [Starting Structor](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#starting-structor)
+ * [Database entities and repositories](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#database-entities-and-repositories)
+ * [Running Spring Data REST service](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#running-spring-data-rest-service)
+ * [Authentication mechanism](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#authentication-mechanism)
+ * [Create a List component](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#create-a-list-component)
+ * [Create a Data Grid component](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#create-a-data-grid-component)
+ * [Create a Form component](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#create-a-form-component)
+ * [Create a Pagination component](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#create-a-pagination-component)
+ * [Build a Web application](https://github.com/ipselon/sdr-bootstrap-prepack/blob/master/README.md#build-a-web-application)
 
 ### Prerequisites
 
