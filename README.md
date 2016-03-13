@@ -419,14 +419,41 @@ Just like all previous components, Form should be created by its generator. Foll
 
 ##### Create a Pagination component
 
-Try to use all above to create a `Pagination` component for `PersonDataGrid`
+Try to use all above to create a `Pagination` component for `PersonDataGrid` component.
 
 If you have any troubles to do that, please ask on <a href="https://www.facebook.com/groups/structor/" target="_blank">Facebook group</a> or on our Slack channel. 
 Invitation to the Slack channel you will receive after successful account registration.
 
+##### Build a Web application
+
+If you've watched video tutorials <a href="https://www.youtube.com/watch?v=AY65e6Ry_rY" target="_blank">here</a> and <a href="https://www.youtube.com/watch?v=JLz8B0XJPyk" target="_blank">here</a>, 
+you might noticed that Structor has an `Export project` item in the main menu. This option will transform all created pages into React components along with React Router settings for your Web application.
+  
+Before we start building our application we need to export project pages, after that you will see new source code for page components in `client/src/routes` directory.
+
+Now we need to build the client code with project's Webpack. You may find its configuration in `client/build-conf` directory. 
+To compile and pack the client JavaScript code just run following command from projects directory:
+```
+npm run build-client
+```
+
+Then if you have Spring Boot server running, just build the Java code:
+```
+server/build-server.bsh
+```
+Or if the server is down, build and run it:
+```
+server/build-server.bsh && server/server.bsh start
+```
+
+Just like that. Now you have a Web application, packed in jar file as Spring Boot Web application. 
+Find this file here: `server/target/changeme-service-1.0-SNAPSHOT.jar`
+
+And if you try to open `http://localhost:8080` address you will see the home page of your application.
+
 ### Further readings
 
-* Description annotation format - what and why we need to add custom `Description` annotation to entities and projections.
+* Description annotation format - why we need to add custom `Description` annotation to entities and projections.
 * Useful pre-created components - description of different components and how to use them for common use cases.
 
 ### License
