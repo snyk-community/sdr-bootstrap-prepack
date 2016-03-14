@@ -108,7 +108,16 @@ After Stuctor successfully started open this address `http://localhost:2222/stru
 
 There is two ways of getting to work with this project:
 
-* The first is to clone project using Structor's gallery page. **Often it takes too much time and ends up with network error**
+##### 1) Download archive file: (Recommended)
+
+Download this repo as an archive file and unpack it. Enter to the directory which appeared after unpacking. Run commands:
+```
+npm install && structor
+```
+
+Now you may open `http://localhost:2222/structor` address in the browser.
+
+##### 2) Clone project using Structor's gallery page. (Often it takes too much time and ends up with network error)
 
 In the browser you will see the projects gallery, find **sdr-bootstrap-prepack** project there and start cloning it by clicking on `clone` link.
 
@@ -121,15 +130,6 @@ Cloning will take approximately 2 or 3 minutes. It takes so much time due to the
 Sometimes npm 3 makes installation for a too long time, and Structor looses the control of this process. In that case it is recommended to run `npm install` command manually in project's directory and then reload entire page in the browser.
 
 Right after finishing cloning process, you'll see the workspace of the Stuctor with the home page of the project. 
-
-* The second way: **Recommended**
-
-Download this repo as an archive file and unpack it. Enter to the directory which appeared after unpacking. Run commands:
-```
-npm install && structor
-```
-
-Now you may open `http://localhost:2222/structor` address in the browser.
 
 Lets's leave the Structor workspace for the moment and switch to the source code, which appeared in our folder.
 
