@@ -15,7 +15,7 @@ Here you will find a wide range of the components for sophisticated Web UI:
   * more than 40 components from popular libraries React Boostrap and React Widgets,
   * many adopted components such as form input elements, navigation through pages and others.
 
-In contrast to majority of the Web apps for database CRUD operations, UI components of the project can display collections of linked entities, interact with each other, search data, and has different types of input elements including dropdowns, calendars and others.
+In contrast to the majority of the Web apps for database CRUD operations, UI components of the project can display collections of linked entities, interact with each other, search data, and has different types of input elements including dropdowns, calendars and others.
 
 It's worth a mention that all UI components are created and manipulated by a visual builder, which gives an instant feedback about how components look and feel.
 
