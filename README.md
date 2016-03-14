@@ -94,18 +94,6 @@ If you do not have Structor yet, please install it by this command:
 npm i structor -g
 `
 
-Create an empty folder and enter in it (assuming you are doing that in command line). 
-Then type the following to run Structor:
-`
-structor
-`
-
-**Note:**  Structor should be installed in global scope, otherwise you will not be able to clone this repo in folder because folder will not be empty in case structor installed there.
-
-After Stuctor successfully started open this address `http://localhost:2222/structor` in your browser.
-
-**Note:** If you prefer to run Structor on another port use command option where port is specified: `structor -p 4000`
-
 There is two ways of getting to work with this project:
 
 ##### 1) Download archive file: (Recommended)
@@ -118,6 +106,18 @@ npm install && structor
 Now you may open `http://localhost:2222/structor` address in the browser.
 
 ##### 2) Clone project using Structor's gallery page. (Often it takes too much time and ends up with network error)
+
+Create an empty folder and enter in it (assuming you are doing that in command line). 
+Then type the following to run Structor:
+`
+structor
+`
+
+**Note:**  Structor should be installed in global scope, otherwise you will not be able to clone this repo in folder because folder will not be empty in case structor installed there.
+
+After Stuctor successfully started open this address `http://localhost:2222/structor` in your browser.
+
+**Note:** If you prefer to run Structor on another port use command option where port is specified: `structor -p 4000`
 
 In the browser you will see the projects gallery, find **sdr-bootstrap-prepack** project there and start cloning it by clicking on `clone` link.
 
