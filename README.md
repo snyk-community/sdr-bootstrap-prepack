@@ -106,6 +106,10 @@ After Stuctor successfully started open this address `http://localhost:2222/stru
 
 **Note:** If you prefer to run Structor on another port use command option where port is specified: `structor -p 4000`
 
+There is two ways of getting to work with this project:
+
+* The first is to clone project using Structor's gallery page. **Often it takes too much time and ends up with network error**
+
 In the browser you will see the projects gallery, find **sdr-bootstrap-prepack** project there and start cloning it by clicking on `clone` link.
 
 <p align="center">
@@ -114,9 +118,20 @@ In the browser you will see the projects gallery, find **sdr-bootstrap-prepack**
 
 Cloning will take approximately 2 or 3 minutes. It takes so much time due to the npm installation process - it tries to install all needed dependecies from the npm repository.
 
-**Note:** Sometimes npm 3 makes installation for a too long time, and Structor looses the control of this process. In that case it is recommended to run `npm install` command manually in project's directory and then reload entire page in the browser.
+Sometimes npm 3 makes installation for a too long time, and Structor looses the control of this process. In that case it is recommended to run `npm install` command manually in project's directory and then reload entire page in the browser.
 
-Right after finishing cloning process, you'll see the workspace of the Stuctor with the home page of the project. But leave it for the moment and switch to the source code, which appeared in our folder.
+Right after finishing cloning process, you'll see the workspace of the Stuctor with the home page of the project. 
+
+* The second way: **Recommended**
+
+Download this repo as an archive file and unpack it. Enter to the directory which appeared after unpacking. Run commands:
+```
+npm install && structor
+```
+
+Now you may open `http://localhost:2222/structor` address in the browser.
+
+Lets's leave the Structor workspace for the moment and switch to the source code, which appeared in our folder.
 
 #### Database entities and repositories
 
