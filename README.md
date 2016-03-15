@@ -63,6 +63,7 @@ All tools and libraries of this project are neatly configured and perfectly work
 ### Prerequisites
 
 * <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">JDK 8</a>
+* <a href="https://maven.apache.org/install.html" target="_blank">Maven</a>
 * <a href="https://nodejs.org/en/" target="_blank">NodeJS 4 or 5</a>
 * <a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank">npm 3</a>
 * <a href="https://www.npmjs.com/package/structor" target="_blank">Structor 0.2.9</a>
