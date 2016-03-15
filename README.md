@@ -105,7 +105,12 @@ npm install && structor
 
 Now you may open `http://localhost:2222/structor` address in the browser.
 
-##### 2) Clone project using Structor's gallery page. (Often it takes too much time and ends up with network error)
+##### 2) Clone project using Structor's gallery page. (Often it takes too much time.)
+
+    it is recommended to install npm > 3.8 and set progress to false:
+    
+    npm install npm -g
+    npm set progress=false
 
 Create an empty folder and enter in it (assuming you are doing that in command line). 
 Then type the following to run Structor:
