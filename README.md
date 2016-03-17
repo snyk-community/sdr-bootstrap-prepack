@@ -97,7 +97,7 @@ If you do not have Structor yet, please install it by this command:
 npm i structor -g
 `
 
-There is two ways of getting to work with this project:
+There is two ways to start working with this project:
 
 ##### 1) Download archive file: (Recommended)
 
