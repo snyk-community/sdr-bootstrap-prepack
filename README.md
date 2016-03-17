@@ -1,5 +1,7 @@
 [![structor compatible](https://img.shields.io/badge/structor%20compatible-v0.2.9-0077dd.svg?style=flat)](http://helmetrex.com)
 
+[![Additional components](https://img.shields.io/badge/Additional%20components-13-brightgreen.svg?style=flat)](https://helmetrex.com/generators?projectId=175)
+
 ##### This repo is a [Structor](https://github.com/ipselon/structor) starter project for [Spring Boot](http://projects.spring.io/spring-boot/) Web application with [React](https://facebook.github.io/react/) UI. 
 
 ## What can be built?
