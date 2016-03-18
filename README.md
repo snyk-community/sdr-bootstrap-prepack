@@ -82,13 +82,13 @@ There are 3 methods to get components in a Stuctor project:
 
 1. Pre-created components, which have already written source code and can be found in the source code repository of the project
 2. Built-in source code generators, which generate the source code from the composition of components on the page. They also can be found in the project source code.
-3. Online source code generators, which generate the source code of the advanced components, such as data grids or forms for RESTful interface. They can be installed into project from [Structor Market](https://helmetrex.com) and behave as they are built-in generators. Look at [the list of available generators](http://probe.helmetrex.com/generators?projectId=175) for this project.
+3. Online source code generators, which generate the source code of the advanced components, such as data grids or forms for RESTful interface. They can be installed into project from [Structor Market](https://helmetrex.com) and behave as they are built-in generators. Look at [the list of available generators](http://helmetrex.com/generators?projectId=175) for this project.
 
 #### Create an account on Structor Market
 
 In this tutorial we will create a few data aware components for Spring Data REST interface. You need to install online generators for such components. But if you are not signed in Structor Market you will not be able to call online generators from Structor.
 
-If you don't have an account on Structor Market, please create it [here](http://probe.helmetrex.com/sign-up).
+If you don't have an account on Structor Market, please create it [here](http://helmetrex.com/sign-up).
 
 #### Starting Structor
 
